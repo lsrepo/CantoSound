@@ -1,0 +1,6 @@
+framework module Pods_yue_cuhk {
+  umbrella header "Pods-yue-cuhk-umbrella.h"
+
+  export *
+  module * { export * }
+}
