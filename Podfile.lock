@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (4.0.1)
+  - Fuzi (1.0.1)
   - Kanna (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - Fuzi (~> 1.0.0)
   - Kanna (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Fuzi: 851403654bac55675aaeed815d0c8a1d3e3d3e8b
   Kanna: 9a6637f72f5c77fe9c045b1efb2a5bb074754af8
 
-PODFILE CHECKSUM: d1c9d644a1e02e852853055933ea9c97015d1a38
+PODFILE CHECKSUM: 610d3878cf40cdcb359465787b7f6f41876f0246
 
 COCOAPODS: 1.1.1

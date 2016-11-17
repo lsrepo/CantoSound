@@ -13,6 +13,7 @@
 		277FEF731DDD96D100F9B409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277FEF721DDD96D100F9B409 /* Assets.xcassets */; };
 		277FEF761DDD96D100F9B409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277FEF741DDD96D100F9B409 /* LaunchScreen.storyboard */; };
 		277FEF811DDD96D100F9B409 /* yue_cuhkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FEF801DDD96D100F9B409 /* yue_cuhkTests.swift */; };
+		27B734B31DDDABF600A1C05E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B734B21DDDABF600A1C05E /* Extensions.swift */; };
 		98105AFBC3C5C0A6D9F83033 /* Pods_yue_cuhk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BA1D7885CD798AB59E2E67 /* Pods_yue_cuhk.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		277FEF7C1DDD96D100F9B409 /* yue-cuhkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yue-cuhkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		277FEF801DDD96D100F9B409 /* yue_cuhkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yue_cuhkTests.swift; sourceTree = "<group>"; };
 		277FEF821DDD96D100F9B409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B734B21DDDABF600A1C05E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9B0B566174AA3FBB39AD65BE /* Pods-yue-cuhk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yue-cuhk.release.xcconfig"; path = "Pods/Target Support Files/Pods-yue-cuhk/Pods-yue-cuhk.release.xcconfig"; sourceTree = "<group>"; };
 		E0BA1D7885CD798AB59E2E67 /* Pods_yue_cuhk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yue_cuhk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 			children = (
 				277FEF6B1DDD96D100F9B409 /* AppDelegate.swift */,
 				277FEF6D1DDD96D100F9B409 /* ViewController.swift */,
+				27B734B21DDDABF600A1C05E /* Extensions.swift */,
 				277FEF6F1DDD96D100F9B409 /* Main.storyboard */,
 				277FEF721DDD96D100F9B409 /* Assets.xcassets */,
 				277FEF741DDD96D100F9B409 /* LaunchScreen.storyboard */,
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				277FEF6E1DDD96D100F9B409 /* ViewController.swift in Sources */,
+				27B734B31DDDABF600A1C05E /* Extensions.swift in Sources */,
 				277FEF6C1DDD96D100F9B409 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +346,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
+				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = disable;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -392,6 +398,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -423,6 +430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pakwlau.com.yue-cuhk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -437,6 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pakwlau.com.yue-cuhk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
