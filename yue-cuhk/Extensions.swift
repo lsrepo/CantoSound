@@ -7,22 +7,15 @@
 //
 
 import Foundation
-//
-//extension NSData {
-//    
-//    
-//    var big5String: String? {
-//        let big5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.big5.rawValue))
-//        
-//        return NSString(data: self as Data, encoding: big5) as? String;
-//    }
-//}
-//
-//extension String {
-//    
-//    var big5Data: NSData? {
-//        let big5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.big5.rawValue))
-//        return self.data(using: String.Encoding(rawValue: big5), allowLossyConversion: false) as NSData?;
-//    }
-//    
-//}
+
+class Sense{
+    let syllable:String
+    let homophones:String
+    let explanation:String
+    
+    init(syllable:String, homophones:String, explanation:String) {
+        self.syllable = syllable
+        self.homophones = homophones
+        self.explanation = explanation
+    }
+}
