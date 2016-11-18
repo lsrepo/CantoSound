@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'yue-cuhk' do
-    pod 'Alamofire', '~> 4.0'
+   
     pod 'Kanna', '~> 2.0.0'
-     pod 'Fuzi', '~> 1.0.0'
+    pod 'UIColor_Hex_Swift', '~> 3.0.2'
 end

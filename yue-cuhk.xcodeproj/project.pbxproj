@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27492B511DDEEB30003999F5 /* SenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27492B501DDEEB30003999F5 /* SenseTableViewCell.swift */; };
+		276CDD231DDF2A73005B216E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276CDD221DDF2A73005B216E /* Constants.swift */; };
 		277FEF6C1DDD96D100F9B409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FEF6B1DDD96D100F9B409 /* AppDelegate.swift */; };
 		277FEF6E1DDD96D100F9B409 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FEF6D1DDD96D100F9B409 /* ViewController.swift */; };
 		277FEF711DDD96D100F9B409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277FEF6F1DDD96D100F9B409 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		00FC0B731EC98B9AEF58F6D6 /* Pods-yue-cuhk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yue-cuhk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yue-cuhk/Pods-yue-cuhk.debug.xcconfig"; sourceTree = "<group>"; };
+		27492B501DDEEB30003999F5 /* SenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenseTableViewCell.swift; sourceTree = "<group>"; };
+		276CDD221DDF2A73005B216E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		277FEF681DDD96D100F9B409 /* yue-cuhk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yue-cuhk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		277FEF6B1DDD96D100F9B409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		277FEF6D1DDD96D100F9B409 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 			children = (
 				277FEF6B1DDD96D100F9B409 /* AppDelegate.swift */,
 				277FEF6D1DDD96D100F9B409 /* ViewController.swift */,
+				27492B501DDEEB30003999F5 /* SenseTableViewCell.swift */,
+				276CDD221DDF2A73005B216E /* Constants.swift */,
 				27B734B21DDDABF600A1C05E /* Extensions.swift */,
 				277FEF6F1DDD96D100F9B409 /* Main.storyboard */,
 				277FEF721DDD96D100F9B409 /* Assets.xcassets */,
@@ -279,6 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276CDD231DDF2A73005B216E /* Constants.swift in Sources */,
+				27492B511DDEEB30003999F5 /* SenseTableViewCell.swift in Sources */,
 				277FEF6E1DDD96D100F9B409 /* ViewController.swift in Sources */,
 				27B734B31DDDABF600A1C05E /* Extensions.swift in Sources */,
 				277FEF6C1DDD96D100F9B409 /* AppDelegate.swift in Sources */,
@@ -427,7 +435,7 @@
 				DEVELOPMENT_TEAM = JFRSPHJ244;
 				INFOPLIST_FILE = "yue-cuhk/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pakwlau.com.yue-cuhk";
+				PRODUCT_BUNDLE_IDENTIFIER = pakwlau.com.jatDict;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -442,7 +450,7 @@
 				DEVELOPMENT_TEAM = JFRSPHJ244;
 				INFOPLIST_FILE = "yue-cuhk/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pakwlau.com.yue-cuhk";
+				PRODUCT_BUNDLE_IDENTIFIER = pakwlau.com.jatDict;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

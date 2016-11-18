@@ -10,10 +10,10 @@ import Foundation
 
 class Sense{
     let syllable:String
-    let homophones:String
+    let homophones:[String]
     let explanation:String
     
-    init(syllable:String, homophones:String, explanation:String) {
+    init(syllable:String, homophones:[String], explanation:String) {
         self.syllable = syllable
         self.homophones = homophones
         self.explanation = explanation
