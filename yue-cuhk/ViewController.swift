@@ -27,7 +27,11 @@ class ViewController: UIViewController {
             }
         }
     }
-    var lastKeyword = "一"
+    
+    /// also the initial keyword
+    var lastKeyword = "附"
+
+    @IBOutlet weak var labelEnDef: UILabel!
     // Table View
     @IBOutlet weak var tfCharacter: UITextField!
     @IBOutlet weak var resultTableView: UITableView!
@@ -56,6 +60,7 @@ class ViewController: UIViewController {
         
         // appearance
         self.view.backgroundColor = Constants.backgroundColor
+        self.tfCharacter.text = "【 " + lastKeyword + " 】"
     }
     
     func searchCharacter(keyword:String){
@@ -67,8 +72,16 @@ class ViewController: UIViewController {
             return
         }
         hasInternet = true
-        let senses = parseHtml(html: html!)
+        
+        // find senses
+        let senses = findSenses(html: html!)
         dataSource = senses
+        
+        // find eng def
+        let enDef = findEnDef(html: html!)
+        labelEnDef.text = enDef
+        
+        // reload table
         resultTableView.reloadData()
     }
     
@@ -78,18 +91,42 @@ class ViewController: UIViewController {
         
         let big5CfIndex = CFIndex(CFStringEncodings.big5.rawValue)
         let big5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(big5CfIndex))
-        let escapedKeyword = keyword.addingPercentEscapes(using: String.Encoding(rawValue: big5))
         
-        let urlStr = "http://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/search.php?q=" + escapedKeyword!
-        let url = URL(string:urlStr)
-        if let data = NSData(contentsOf: url!){
-            let html = NSString(data: data as Data, encoding: big5) as! String
-            return html
+        //  characters not in big5 cannot be encoded
+        if let escapedKeyword = keyword.addingPercentEscapes(using: String.Encoding(rawValue: big5)){
+            let urlStr = "http://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/search.php?q=" + escapedKeyword
+            let url = URL(string:urlStr)
+            if let data = NSData(contentsOf: url!){
+                let html = NSString(data: data as Data, encoding: big5) as! String
+                return html
+            }
+        }else{
+            return " "
         }
+        
+        
         return nil
     }
+    func findEnDef(html:String)->String{
+        print("======= Finding Eng ======= ")
+      
+        var def = String()
+        var fonts = [XMLElement]()
+        if let doc = Kanna.HTML(html:html , encoding: .utf8){
+            for font in doc.css("table[cellspacing^='5'] tr td font"){
+                fonts.append(font)
+            }
+            guard (fonts.count > 3) else { return "" }
+            if let defTmp = fonts[3].content{
+                def = defTmp.replacingOccurrences(of: "      ", with: ", ")
+                print(defTmp)
+            }
+        }
+        return def
+    }
     
-    func parseHtml(html:String) -> [Sense]{
+    
+    func findSenses(html:String) -> [Sense]{
         print("======= Begin Parsing ======= ")
         var senses = [Sense]()
         
@@ -119,6 +156,10 @@ class ViewController: UIViewController {
                     senses.append(sense)
                 }
             }
+        }
+        
+        if ( senses.count == 0){
+            return [Sense(syllable: "mou5", homophones: ["冇"], explanation: "冇結果。\n可能係你搵嘅字唔係大五碼入面。")]
         }
         return senses
     }
