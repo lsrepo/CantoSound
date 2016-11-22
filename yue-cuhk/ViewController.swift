@@ -17,12 +17,16 @@ class ViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     var hasInternet:Bool = false{
         didSet{
-            print("hasInternet:\(hasInternet)" )
+            //print("hasInternet:\(hasInternet)" )
             if (!hasInternet){
-                print(" no coneection")
+                //print(" no coneection")
                 labelConnectionProbelm.alpha = 1
+                // reset data
+                self.dataSource = [Sense]()
+                self.labelEnDef.text?.removeAll()
+                self.resultTableView.reloadData()
             }else{
-                print(" has coneection")
+                //print(" has coneection")
                 labelConnectionProbelm.alpha = 0
             }
         }
@@ -108,7 +112,7 @@ class ViewController: UIViewController {
         return nil
     }
     func findEnDef(html:String)->String{
-        print("======= Finding Eng ======= ")
+        //print("======= Finding Eng ======= ")
       
         var def = String()
         var fonts = [XMLElement]()
@@ -119,7 +123,7 @@ class ViewController: UIViewController {
             guard (fonts.count > 3) else { return "" }
             if let defTmp = fonts[3].content{
                 def = defTmp.replacingOccurrences(of: "      ", with: ", ")
-                print(defTmp)
+                //print(defTmp)
             }
         }
         return def
@@ -127,7 +131,7 @@ class ViewController: UIViewController {
     
     
     func findSenses(html:String) -> [Sense]{
-        print("======= Begin Parsing ======= ")
+        //print("======= Begin Parsing ======= ")
         var senses = [Sense]()
         
         if let doc = Kanna.HTML(html:html , encoding: .utf8){
@@ -150,7 +154,7 @@ class ViewController: UIViewController {
                     //replacingOccurrences(of: " ", with: "")
                     let homophones = contents[3].trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).components(separatedBy: ",")
                     
-                    print(explanation)
+                    //print(explanation)
                     
                     let sense = Sense(syllable: syllable, homophones: homophones, explanation: explanation)
                     senses.append(sense)
@@ -225,27 +229,27 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
 extension ViewController:UITextFieldDelegate{
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        print("End editing")
+        //print("End editing")
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let keyword = tfCharacter.text
         self.lastKeyword = keyword!
         let charCount = keyword!.characters.count
-        print(charCount)
+        //print(charCount)
         
         switch charCount {
         case 0:
-            print("wow! 0")
+            //print("wow! 0")
             return false
         case 1:
-            print("wow! 1")
+            //print("wow! 1")
             tfCharacter.resignFirstResponder();
             tfCharacter.text = "【 " + keyword! + " 】"
             self.searchCharacter(keyword: keyword!)
             return true
         default:
-            print("wow! more than 1")
+            //print("wow! more than 1")
             return false
         }
     }
@@ -277,7 +281,7 @@ extension ViewController:AVAudioPlayerDelegate{
             }
 
         } catch {
-            print("Error getting the audio file")
+            //print("Error getting the audio file")
         }
     }
 }

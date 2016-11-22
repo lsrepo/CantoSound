@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UIColor_Hex_Swift
+
 
 class SenseTableViewCell: UITableViewCell {
 
