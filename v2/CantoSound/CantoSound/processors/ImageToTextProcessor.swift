@@ -32,7 +32,6 @@ class ImageToTextProcessor {
     
     
     func detect(image: UIImage) {
-        
         // Get the CGImage on which to perform requests.
         guard let cgImage = image.cgImage else { return }
 
@@ -43,6 +42,8 @@ class ImageToTextProcessor {
         let request = VNRecognizeTextRequest(completionHandler: self.recognizeTextHandler)
         
         request.recognitionLanguages =  ["zh-Hant"]
+        
+        // Fast mode does not support zh yet
         request.recognitionLevel = .accurate
 
         do {
@@ -52,10 +53,4 @@ class ImageToTextProcessor {
             print("Unable to perform the requests: \(error).")
         }
     }
-    
-    func getChineseCharacters(strings: [String]){
-        
-    }
-    
-
 }

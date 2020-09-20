@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */; };
 		EA0B3C90251744A900E748E0 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3C8F251744A900E748E0 /* TestError.swift */; };
+		EA0B3C962517520400E748E0 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C952517520400E748E0 /* CameraView */; };
+		EA0B3C9F2517554900E748E0 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C9E2517554900E748E0 /* SwiftUICam */; };
+		EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA32517609500E748E0 /* CameraView.swift */; };
 		EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37672517286200876B26 /* CantoSoundApp.swift */; };
 		EAAC376A2517286200876B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37692517286200876B26 /* ContentView.swift */; };
 		EAAC376C2517286300876B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376B2517286300876B26 /* Assets.xcassets */; };
@@ -39,6 +42,7 @@
 /* Begin PBXFileReference section */
 		EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
+		EA0B3CA32517609500E748E0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		EAAC37642517286200876B26 /* CantoSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CantoSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC37672517286200876B26 /* CantoSoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundApp.swift; sourceTree = "<group>"; };
 		EAAC37692517286200876B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0B3C9F2517554900E748E0 /* SwiftUICam in Frameworks */,
+				EA0B3C962517520400E748E0 /* CameraView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +115,7 @@
 				EAAC376B2517286300876B26 /* Assets.xcassets */,
 				EAAC37702517286300876B26 /* Info.plist */,
 				EAAC376D2517286300876B26 /* Preview Content */,
+				EA0B3CA32517609500E748E0 /* CameraView.swift */,
 			);
 			path = CantoSound;
 			sourceTree = "<group>";
@@ -174,6 +181,10 @@
 			dependencies = (
 			);
 			name = CantoSound;
+			packageProductDependencies = (
+				EA0B3C952517520400E748E0 /* CameraView */,
+				EA0B3C9E2517554900E748E0 /* SwiftUICam */,
+			);
 			productName = CantoSound;
 			productReference = EAAC37642517286200876B26 /* CantoSound.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +256,10 @@
 				Base,
 			);
 			mainGroup = EAAC375B2517286200876B26;
+			packageReferences = (
+				EA0B3C942517520400E748E0 /* XCRemoteSwiftPackageReference "CameraView" */,
+				EA0B3C9D2517554900E748E0 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
+			);
 			productRefGroup = EAAC37652517286200876B26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -291,6 +306,7 @@
 				EAAC376A2517286200876B26 /* ContentView.swift in Sources */,
 				EAAC379725172BBF00876B26 /* ImageToTextProcessor.swift in Sources */,
 				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
+				EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CantoSound/Preview Content\"";
+				DEVELOPMENT_TEAM = JDFT4SYY26;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CantoSound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -472,6 +489,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CantoSound/Preview Content\"";
+				DEVELOPMENT_TEAM = JDFT4SYY26;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CantoSound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -606,6 +624,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA0B3C942517520400E748E0 /* XCRemoteSwiftPackageReference "CameraView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/brettfazio/CameraView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+		EA0B3C9D2517554900E748E0 /* XCRemoteSwiftPackageReference "SwiftUICam" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pierreveron/SwiftUICam";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA0B3C952517520400E748E0 /* CameraView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA0B3C942517520400E748E0 /* XCRemoteSwiftPackageReference "CameraView" */;
+			productName = CameraView;
+		};
+		EA0B3C9E2517554900E748E0 /* SwiftUICam */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA0B3C9D2517554900E748E0 /* XCRemoteSwiftPackageReference "SwiftUICam" */;
+			productName = SwiftUICam;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EAAC375C2517286200876B26 /* Project object */;
 }

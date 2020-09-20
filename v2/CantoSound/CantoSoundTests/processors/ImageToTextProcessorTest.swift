@@ -34,5 +34,6 @@ class ImageToTextProcessorTest: XCTestCase {
         processor.detect(image: image)
         wait(for: [expectation], timeout: 3.0)
     }
+
 }
 
