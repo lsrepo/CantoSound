@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37672517286200876B26 /* CantoSoundApp.swift */; };
+		EAAC376A2517286200876B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37692517286200876B26 /* ContentView.swift */; };
+		EAAC376C2517286300876B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376B2517286300876B26 /* Assets.xcassets */; };
+		EAAC376F2517286300876B26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376E2517286300876B26 /* Preview Assets.xcassets */; };
+		EAAC377A2517286300876B26 /* CantoSoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37792517286300876B26 /* CantoSoundTests.swift */; };
+		EAAC37852517286300876B26 /* CantoSoundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37842517286300876B26 /* CantoSoundUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAAC37762517286300876B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC375C2517286200876B26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAC37632517286200876B26;
+			remoteInfo = CantoSound;
+		};
+		EAAC37812517286300876B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC375C2517286200876B26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAC37632517286200876B26;
+			remoteInfo = CantoSound;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EAAC37642517286200876B26 /* CantoSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CantoSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAC37672517286200876B26 /* CantoSoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundApp.swift; sourceTree = "<group>"; };
+		EAAC37692517286200876B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EAAC376B2517286300876B26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAAC376E2517286300876B26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EAAC37702517286300876B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAAC37752517286300876B26 /* CantoSoundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CantoSoundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAC37792517286300876B26 /* CantoSoundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundTests.swift; sourceTree = "<group>"; };
+		EAAC377B2517286300876B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAAC37802517286300876B26 /* CantoSoundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CantoSoundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAC37842517286300876B26 /* CantoSoundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundUITests.swift; sourceTree = "<group>"; };
+		EAAC37862517286300876B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAAC37612517286200876B26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAAC37722517286300876B26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAAC377D2517286300876B26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAAC375B2517286200876B26 = {
+			isa = PBXGroup;
+			children = (
+				EAAC37662517286200876B26 /* CantoSound */,
+				EAAC37782517286300876B26 /* CantoSoundTests */,
+				EAAC37832517286300876B26 /* CantoSoundUITests */,
+				EAAC37652517286200876B26 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAAC37652517286200876B26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC37642517286200876B26 /* CantoSound.app */,
+				EAAC37752517286300876B26 /* CantoSoundTests.xctest */,
+				EAAC37802517286300876B26 /* CantoSoundUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAAC37662517286200876B26 /* CantoSound */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC37672517286200876B26 /* CantoSoundApp.swift */,
+				EAAC37692517286200876B26 /* ContentView.swift */,
+				EAAC376B2517286300876B26 /* Assets.xcassets */,
+				EAAC37702517286300876B26 /* Info.plist */,
+				EAAC376D2517286300876B26 /* Preview Content */,
+			);
+			path = CantoSound;
+			sourceTree = "<group>";
+		};
+		EAAC376D2517286300876B26 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC376E2517286300876B26 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EAAC37782517286300876B26 /* CantoSoundTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC37792517286300876B26 /* CantoSoundTests.swift */,
+				EAAC377B2517286300876B26 /* Info.plist */,
+			);
+			path = CantoSoundTests;
+			sourceTree = "<group>";
+		};
+		EAAC37832517286300876B26 /* CantoSoundUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC37842517286300876B26 /* CantoSoundUITests.swift */,
+				EAAC37862517286300876B26 /* Info.plist */,
+			);
+			path = CantoSoundUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAAC37632517286200876B26 /* CantoSound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAAC37892517286300876B26 /* Build configuration list for PBXNativeTarget "CantoSound" */;
+			buildPhases = (
+				EAAC37602517286200876B26 /* Sources */,
+				EAAC37612517286200876B26 /* Frameworks */,
+				EAAC37622517286200876B26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CantoSound;
+			productName = CantoSound;
+			productReference = EAAC37642517286200876B26 /* CantoSound.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EAAC37742517286300876B26 /* CantoSoundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAAC378C2517286300876B26 /* Build configuration list for PBXNativeTarget "CantoSoundTests" */;
+			buildPhases = (
+				EAAC37712517286300876B26 /* Sources */,
+				EAAC37722517286300876B26 /* Frameworks */,
+				EAAC37732517286300876B26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAAC37772517286300876B26 /* PBXTargetDependency */,
+			);
+			name = CantoSoundTests;
+			productName = CantoSoundTests;
+			productReference = EAAC37752517286300876B26 /* CantoSoundTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EAAC377F2517286300876B26 /* CantoSoundUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAAC378F2517286300876B26 /* Build configuration list for PBXNativeTarget "CantoSoundUITests" */;
+			buildPhases = (
+				EAAC377C2517286300876B26 /* Sources */,
+				EAAC377D2517286300876B26 /* Frameworks */,
+				EAAC377E2517286300876B26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAAC37822517286300876B26 /* PBXTargetDependency */,
+			);
+			name = CantoSoundUITests;
+			productName = CantoSoundUITests;
+			productReference = EAAC37802517286300876B26 /* CantoSoundUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAAC375C2517286200876B26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					EAAC37632517286200876B26 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					EAAC37742517286300876B26 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = EAAC37632517286200876B26;
+					};
+					EAAC377F2517286300876B26 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = EAAC37632517286200876B26;
+					};
+				};
+			};
+			buildConfigurationList = EAAC375F2517286200876B26 /* Build configuration list for PBXProject "CantoSound" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAAC375B2517286200876B26;
+			productRefGroup = EAAC37652517286200876B26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAAC37632517286200876B26 /* CantoSound */,
+				EAAC37742517286300876B26 /* CantoSoundTests */,
+				EAAC377F2517286300876B26 /* CantoSoundUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAAC37622517286200876B26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC376F2517286300876B26 /* Preview Assets.xcassets in Resources */,
+				EAAC376C2517286300876B26 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAAC37732517286300876B26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAAC377E2517286300876B26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAAC37602517286200876B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC376A2517286200876B26 /* ContentView.swift in Sources */,
+				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAAC37712517286300876B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC377A2517286300876B26 /* CantoSoundTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAAC377C2517286300876B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC37852517286300876B26 /* CantoSoundUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAAC37772517286300876B26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAAC37632517286200876B26 /* CantoSound */;
+			targetProxy = EAAC37762517286300876B26 /* PBXContainerItemProxy */;
+		};
+		EAAC37822517286300876B26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAAC37632517286200876B26 /* CantoSound */;
+			targetProxy = EAAC37812517286300876B26 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EAAC37872517286300876B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EAAC37882517286300876B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAAC378A2517286300876B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CantoSound/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CantoSound/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paklau.cantosound.CantoSound;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAAC378B2517286300876B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CantoSound/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CantoSound/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paklau.cantosound.CantoSound;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EAAC378D2517286300876B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CantoSoundTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paklau.cantosound.CantoSoundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CantoSound.app/CantoSound";
+			};
+			name = Debug;
+		};
+		EAAC378E2517286300876B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CantoSoundTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paklau.cantosound.CantoSoundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CantoSound.app/CantoSound";
+			};
+			name = Release;
+		};
+		EAAC37902517286300876B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CantoSoundUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paklau.cantosound.CantoSoundUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CantoSound;
+			};
+			name = Debug;
+		};
+		EAAC37912517286300876B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CantoSoundUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paklau.cantosound.CantoSoundUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CantoSound;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAAC375F2517286200876B26 /* Build configuration list for PBXProject "CantoSound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAC37872517286300876B26 /* Debug */,
+				EAAC37882517286300876B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAAC37892517286300876B26 /* Build configuration list for PBXNativeTarget "CantoSound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAC378A2517286300876B26 /* Debug */,
+				EAAC378B2517286300876B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAAC378C2517286300876B26 /* Build configuration list for PBXNativeTarget "CantoSoundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAC378D2517286300876B26 /* Debug */,
+				EAAC378E2517286300876B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAAC378F2517286300876B26 /* Build configuration list for PBXNativeTarget "CantoSoundUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAC37902517286300876B26 /* Debug */,
+				EAAC37912517286300876B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAAC375C2517286200876B26 /* Project object */;
+}
