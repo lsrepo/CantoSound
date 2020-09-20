@@ -24,7 +24,6 @@ struct ContentView: View {
         VStack {
             cameraView
                 .frame(maxHeight: 200)
-              
             Button(
                 action : {
                     print("Button Pressed")
@@ -35,14 +34,11 @@ struct ContentView: View {
                 label : {Text("Detect")
                 })
                 .frame(height: 200)
-                .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
             
             Image(uiImage: capturedImage)
                 .resizable().aspectRatio(contentMode: .fit)
                 .frame(height:200)
                 .foregroundColor(.black)
-                .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-//                .aspectRatio(contentMode: .fill)
                
         }
     }
