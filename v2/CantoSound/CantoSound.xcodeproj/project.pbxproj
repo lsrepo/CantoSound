@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */; };
+		EA0B3C90251744A900E748E0 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3C8F251744A900E748E0 /* TestError.swift */; };
 		EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37672517286200876B26 /* CantoSoundApp.swift */; };
 		EAAC376A2517286200876B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37692517286200876B26 /* ContentView.swift */; };
 		EAAC376C2517286300876B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376B2517286300876B26 /* Assets.xcassets */; };
 		EAAC376F2517286300876B26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376E2517286300876B26 /* Preview Assets.xcassets */; };
 		EAAC377A2517286300876B26 /* CantoSoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37792517286300876B26 /* CantoSoundTests.swift */; };
 		EAAC37852517286300876B26 /* CantoSoundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37842517286300876B26 /* CantoSoundUITests.swift */; };
+		EAAC379725172BBF00876B26 /* ImageToTextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC379625172BBF00876B26 /* ImageToTextProcessor.swift */; };
+		EAAC37A025172E3000876B26 /* ImageToTextProcessorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC379F25172E3000876B26 /* ImageToTextProcessorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
+		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		EAAC37642517286200876B26 /* CantoSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CantoSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC37672517286200876B26 /* CantoSoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundApp.swift; sourceTree = "<group>"; };
 		EAAC37692517286200876B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,8 @@
 		EAAC37802517286300876B26 /* CantoSoundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CantoSoundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC37842517286300876B26 /* CantoSoundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundUITests.swift; sourceTree = "<group>"; };
 		EAAC37862517286300876B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAAC379625172BBF00876B26 /* ImageToTextProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToTextProcessor.swift; sourceTree = "<group>"; };
+		EAAC379F25172E3000876B26 /* ImageToTextProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToTextProcessorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		EAAC37662517286200876B26 /* CantoSound */ = {
 			isa = PBXGroup;
 			children = (
+				EAAC379525172B7D00876B26 /* processors */,
 				EAAC37672517286200876B26 /* CantoSoundApp.swift */,
 				EAAC37692517286200876B26 /* ContentView.swift */,
 				EAAC376B2517286300876B26 /* Assets.xcassets */,
@@ -115,8 +124,11 @@
 		EAAC37782517286300876B26 /* CantoSoundTests */ = {
 			isa = PBXGroup;
 			children = (
+				EAAC379E25172E1700876B26 /* processors */,
 				EAAC37792517286300876B26 /* CantoSoundTests.swift */,
 				EAAC377B2517286300876B26 /* Info.plist */,
+				EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */,
+				EA0B3C8F251744A900E748E0 /* TestError.swift */,
 			);
 			path = CantoSoundTests;
 			sourceTree = "<group>";
@@ -128,6 +140,22 @@
 				EAAC37862517286300876B26 /* Info.plist */,
 			);
 			path = CantoSoundUITests;
+			sourceTree = "<group>";
+		};
+		EAAC379525172B7D00876B26 /* processors */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC379625172BBF00876B26 /* ImageToTextProcessor.swift */,
+			);
+			path = processors;
+			sourceTree = "<group>";
+		};
+		EAAC379E25172E1700876B26 /* processors */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC379F25172E3000876B26 /* ImageToTextProcessorTest.swift */,
+			);
+			path = processors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAAC376A2517286200876B26 /* ContentView.swift in Sources */,
+				EAAC379725172BBF00876B26 /* ImageToTextProcessor.swift in Sources */,
 				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +298,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0B3C90251744A900E748E0 /* TestError.swift in Sources */,
+				EAAC37A025172E3000876B26 /* ImageToTextProcessorTest.swift in Sources */,
 				EAAC377A2517286300876B26 /* CantoSoundTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
