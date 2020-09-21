@@ -12,6 +12,7 @@
 		EA0B3C962517520400E748E0 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C952517520400E748E0 /* CameraView */; };
 		EA0B3C9F2517554900E748E0 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C9E2517554900E748E0 /* SwiftUICam */; };
 		EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA32517609500E748E0 /* CameraView.swift */; };
+		EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA8251839E000E748E0 /* WordList.swift */; };
 		EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37672517286200876B26 /* CantoSoundApp.swift */; };
 		EAAC376A2517286200876B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37692517286200876B26 /* ContentView.swift */; };
 		EAAC376C2517286300876B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376B2517286300876B26 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		EA0B3CA32517609500E748E0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		EA0B3CA8251839E000E748E0 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		EAAC37642517286200876B26 /* CantoSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CantoSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC37672517286200876B26 /* CantoSoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundApp.swift; sourceTree = "<group>"; };
 		EAAC37692517286200876B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				EAAC37702517286300876B26 /* Info.plist */,
 				EAAC376D2517286300876B26 /* Preview Content */,
 				EA0B3CA32517609500E748E0 /* CameraView.swift */,
+				EA0B3CA8251839E000E748E0 /* WordList.swift */,
 			);
 			path = CantoSound;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				EAAC379725172BBF00876B26 /* ImageToTextProcessor.swift in Sources */,
 				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
 				EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */,
+				EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

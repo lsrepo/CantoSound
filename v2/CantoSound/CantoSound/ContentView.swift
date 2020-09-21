@@ -7,39 +7,45 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
     @State var capturedImage = UIImage()
-    
-    func handlePhotoReceived(image: UIImage?) {
-        if let image = image {
-            capturedImage = image
-        }
+    @State var detectedWords = [Word]()
+
+    func handleText(sentences: [String]) {
+
+        let characters = sentences.flatMap{ sentence in Array(sentence) }
+        let words = characters.map{ character in Word(character: String(character))}
+        detectedWords = words
     }
     
-    @State var isShowingCameraView = true
-    var cameraView = CameraView()
+    func handlePhotoReceived(image: UIImage?) {
+        guard let image = image else {return}
+        capturedImage = image
+        
+        let imageToTextProcessor = ImageToTextProcessor(textHandler: handleText)
+        imageToTextProcessor.detect(image: image)
+    }
     
+    var cameraView = CameraView()
+
     var body: some View {
         VStack {
             cameraView
                 .frame(maxHeight: 200)
             Button(
                 action : {
-                    print("Button Pressed")
                     cameraView.controller.photoCaptureCompletionBlock = handlePhotoReceived
                     cameraView.controller.capturePhoto()
-                    
                 },
                 label : {Text("Detect")
                 })
                 .frame(height: 200)
-            
-            Image(uiImage: capturedImage)
-                .resizable().aspectRatio(contentMode: .fit)
-                .frame(height:200)
-                .foregroundColor(.black)
-               
+//
+//            Image(uiImage: capturedImage)
+//                .resizable().aspectRatio(contentMode: .fit)
+//                .frame(height:200)
+//                .foregroundColor(.black)
+            WordList(words: $detectedWords)
         }
     }
 }

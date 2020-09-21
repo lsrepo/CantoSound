@@ -19,10 +19,7 @@ struct CameraView : UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: CameraView.UIViewControllerType, context: UIViewControllerRepresentableContext<CameraView>) {
         
     }
-    
-    public func capturePhoto() {
-        
-    }
+
 }
 
 struct CameraView_Previews: PreviewProvider {
