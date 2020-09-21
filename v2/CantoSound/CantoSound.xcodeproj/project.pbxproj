@@ -13,6 +13,10 @@
 		EA0B3C9F2517554900E748E0 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C9E2517554900E748E0 /* SwiftUICam */; };
 		EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA32517609500E748E0 /* CameraView.swift */; };
 		EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA8251839E000E748E0 /* WordList.swift */; };
+		EA6455D52518E1AD00B6965A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = EA6455D42518E1AD00B6965A /* SwiftSoup */; };
+		EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */; };
+		EA6455DF2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */; };
+		EA6455F22518E98A00B6965A /* oi.html in Resources */ = {isa = PBXBuildFile; fileRef = EA6455F12518E98900B6965A /* oi.html */; };
 		EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37672517286200876B26 /* CantoSoundApp.swift */; };
 		EAAC376A2517286200876B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37692517286200876B26 /* ContentView.swift */; };
 		EAAC376C2517286300876B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376B2517286300876B26 /* Assets.xcassets */; };
@@ -45,6 +49,9 @@
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		EA0B3CA32517609500E748E0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		EA0B3CA8251839E000E748E0 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
+		EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessor.swift; sourceTree = "<group>"; };
+		EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessorTest.swift; sourceTree = "<group>"; };
+		EA6455F12518E98900B6965A /* oi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = oi.html; sourceTree = "<group>"; };
 		EAAC37642517286200876B26 /* CantoSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CantoSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC37672517286200876B26 /* CantoSoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundApp.swift; sourceTree = "<group>"; };
 		EAAC37692517286200876B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 			files = (
 				EA0B3C9F2517554900E748E0 /* SwiftUICam in Frameworks */,
 				EA0B3C962517520400E748E0 /* CameraView in Frameworks */,
+				EA6455D52518E1AD00B6965A /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				EAAC379625172BBF00876B26 /* ImageToTextProcessor.swift */,
+				EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */,
 			);
 			path = processors;
 			sourceTree = "<group>";
@@ -163,7 +172,9 @@
 		EAAC379E25172E1700876B26 /* processors */ = {
 			isa = PBXGroup;
 			children = (
+				EA6455F12518E98900B6965A /* oi.html */,
 				EAAC379F25172E3000876B26 /* ImageToTextProcessorTest.swift */,
+				EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */,
 			);
 			path = processors;
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 			packageProductDependencies = (
 				EA0B3C952517520400E748E0 /* CameraView */,
 				EA0B3C9E2517554900E748E0 /* SwiftUICam */,
+				EA6455D42518E1AD00B6965A /* SwiftSoup */,
 			);
 			productName = CantoSound;
 			productReference = EAAC37642517286200876B26 /* CantoSound.app */;
@@ -262,6 +274,7 @@
 			packageReferences = (
 				EA0B3C942517520400E748E0 /* XCRemoteSwiftPackageReference "CameraView" */,
 				EA0B3C9D2517554900E748E0 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
+				EA6455D32518E1AD00B6965A /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = EAAC37652517286200876B26 /* Products */;
 			projectDirPath = "";
@@ -288,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6455F22518E98A00B6965A /* oi.html in Resources */,
 				EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +325,7 @@
 				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
 				EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */,
 				EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */,
+				EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +336,7 @@
 				EA0B3C90251744A900E748E0 /* TestError.swift in Sources */,
 				EAAC37A025172E3000876B26 /* ImageToTextProcessorTest.swift in Sources */,
 				EAAC377A2517286300876B26 /* CantoSoundTests.swift in Sources */,
+				EA6455DF2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +530,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JDFT4SYY26;
 				INFOPLIST_FILE = CantoSoundTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -535,6 +552,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JDFT4SYY26;
 				INFOPLIST_FILE = CantoSoundTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -555,6 +573,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JDFT4SYY26;
 				INFOPLIST_FILE = CantoSoundUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -574,6 +593,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JDFT4SYY26;
 				INFOPLIST_FILE = CantoSoundUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -646,6 +666,14 @@
 				kind = branch;
 			};
 		};
+		EA6455D32518E1AD00B6965A /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -658,6 +686,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EA0B3C9D2517554900E748E0 /* XCRemoteSwiftPackageReference "SwiftUICam" */;
 			productName = SwiftUICam;
+		};
+		EA6455D42518E1AD00B6965A /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA6455D32518E1AD00B6965A /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

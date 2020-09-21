@@ -20,5 +20,53 @@
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6128060-DB16-4EA7-A2BE-58F634BDE5CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CantoSoundTests/processors/HtmlToWordDefinitionProcessorTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "testSoup()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A6128060-DB16-4EA7-A2BE-58F634BDE5CB - 61148e8611d8643"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CantoSoundTests.HtmlToWordDefinitionProcessorTest.testSoup() throws -&gt; ()"
+                  moduleName = "CantoSoundTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pakwai.lauzuhlke.com/dev/CantoSound/v2/CantoSound/CantoSoundTests/processors/HtmlToWordDefinitionProcessorTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "2753">
+               </Location>
+               <Location
+                  uuid = "A6128060-DB16-4EA7-A2BE-58F634BDE5CB - 61148e8611d8643"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CantoSoundTests.HtmlToWordDefinitionProcessorTest.testSoup() throws -&gt; ()"
+                  moduleName = "CantoSoundTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pakwai.lauzuhlke.com/dev/CantoSound/v2/CantoSound/CantoSoundTests/processors/HtmlToWordDefinitionProcessorTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "2986">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
