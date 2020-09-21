@@ -13,7 +13,7 @@ struct MyTextFieldStyle: TextFieldStyle {
             .padding(10)
             .background(
                 RoundedRectangle(cornerRadius: 3, style: .continuous)
-                    .stroke(Color.white, lineWidth: 2)
+                    .stroke(Color.white, lineWidth: 1.5)
             ).padding()
     }
 }
@@ -38,25 +38,32 @@ struct ContentView: View {
         imageToTextProcessor.detect(image: image)
     }
     
+    func onCommitKeywordInputField() {
+        detectedWords = [Word(character: keyword)]
+    }
+    
     var cameraView = CameraView()
     
     var body: some View {
         VStack {
+            Spacer()
             HStack{
-                TextField("打字", text: $keyword)
+     
+                TextField("打字", text: $keyword, onCommit: onCommitKeywordInputField)
                     .textFieldStyle(MyTextFieldStyle())
                     .keyboardType(.default)
-                    .font(.largeTitle)
+                    .font(.title)
                     .lineLimit(1)
                     .frame(width: 150, height: 150.0)
                     .padding()
+                    
                 Text("或")
                     .padding()
                 Button(
                     action : {
                         showCameraView = true
                     },
-                    label : { Image(systemName: "camera.viewfinder")
+                    label : { Image(systemName: "camera.circle")
                         .resizable()
                         .foregroundColor(.white)
                         .frame( width:40, height: 40)}
@@ -73,7 +80,10 @@ struct ContentView: View {
                     cameraView.controller.capturePhoto()
                     showCameraView = false
                 },
-                label : {Text("Detect")
+                label : {Image(systemName: "camera.viewfinder")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame( width:40, height: 40)
             })
             .frame(height: 200)
             
