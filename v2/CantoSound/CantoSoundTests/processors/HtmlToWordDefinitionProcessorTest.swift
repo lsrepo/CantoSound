@@ -11,22 +11,24 @@ import SwiftSoup
 @testable import CantoSound
 
 class HtmlToWordDefinitionProcessorTest: XCTestCase {
-
+    var oiHtml: String = ""
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle .path(forResource: "oi", ofType: "html")
+        oiHtml = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testSoup() throws {
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle .path(forResource: "oi", ofType: "html")
-        let html = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+        
         
         do{
-            let doc: Document = try SwiftSoup.parse(html)
+            let doc: Document = try SwiftSoup.parse(oiHtml)
             let table = try doc.select("body > form > table:nth-child(1)  > tbody ")
             let headerRow = try table.select("tr:nth-child(1)")
             try headerRow.remove()
@@ -42,6 +44,20 @@ class HtmlToWordDefinitionProcessorTest: XCTestCase {
     }
     
     func testShouldReturnAllDefinitions() throws {
+        let processor = HtmlToWordDefinitionProcessor(html: oiHtml)
         
+        do {
+            let oi = try processor.getWord()
+            let expectedOi = ChineseWord(definitions: [
+                ChineseWordefinition(
+                    syllableYale: "oi3",
+                    homophones: ["鑀", "焥", "薆"],
+                    words: ["愛心", "愛情", "愛護", "愛惜", "博愛", "熱愛", "偏愛", "疼愛"]
+                )
+            ])
+            
+            XCTAssertEqual(oi?.definitions.first, expectedOi.definitions.first)
+        }
+
     }
 }
