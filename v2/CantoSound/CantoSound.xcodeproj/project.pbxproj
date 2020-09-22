@@ -13,10 +13,12 @@
 		EA0B3C9F2517554900E748E0 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C9E2517554900E748E0 /* SwiftUICam */; };
 		EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA32517609500E748E0 /* CameraView.swift */; };
 		EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA8251839E000E748E0 /* WordList.swift */; };
+		EA26CE32251A2D3F000B1BA2 /* CantoneseDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */; };
 		EA6455D52518E1AD00B6965A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = EA6455D42518E1AD00B6965A /* SwiftSoup */; };
 		EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */; };
 		EA6455DF2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */; };
 		EA6455F22518E98A00B6965A /* oi.html in Resources */ = {isa = PBXBuildFile; fileRef = EA6455F12518E98900B6965A /* oi.html */; };
+		EA6455F72519815700B6965A /* WordDefinitionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455F62519815700B6965A /* WordDefinitionListView.swift */; };
 		EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37672517286200876B26 /* CantoSoundApp.swift */; };
 		EAAC376A2517286200876B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37692517286200876B26 /* ContentView.swift */; };
 		EAAC376C2517286300876B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376B2517286300876B26 /* Assets.xcassets */; };
@@ -49,9 +51,11 @@
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		EA0B3CA32517609500E748E0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		EA0B3CA8251839E000E748E0 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
+		EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoneseDictionary.swift; sourceTree = "<group>"; };
 		EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessor.swift; sourceTree = "<group>"; };
 		EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessorTest.swift; sourceTree = "<group>"; };
 		EA6455F12518E98900B6965A /* oi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = oi.html; sourceTree = "<group>"; };
+		EA6455F62519815700B6965A /* WordDefinitionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionListView.swift; sourceTree = "<group>"; };
 		EAAC37642517286200876B26 /* CantoSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CantoSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC37672517286200876B26 /* CantoSoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundApp.swift; sourceTree = "<group>"; };
 		EAAC37692517286200876B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				EAAC376D2517286300876B26 /* Preview Content */,
 				EA0B3CA32517609500E748E0 /* CameraView.swift */,
 				EA0B3CA8251839E000E748E0 /* WordList.swift */,
+				EA6455F62519815700B6965A /* WordDefinitionListView.swift */,
+				EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */,
 			);
 			path = CantoSound;
 			sourceTree = "<group>";
@@ -322,8 +328,10 @@
 			files = (
 				EAAC376A2517286200876B26 /* ContentView.swift in Sources */,
 				EAAC379725172BBF00876B26 /* ImageToTextProcessor.swift in Sources */,
+				EA26CE32251A2D3F000B1BA2 /* CantoneseDictionary.swift in Sources */,
 				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
 				EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */,
+				EA6455F72519815700B6965A /* WordDefinitionListView.swift in Sources */,
 				EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */,
 				EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */,
 			);

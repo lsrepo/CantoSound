@@ -23,11 +23,14 @@ struct ContentView: View {
     @State var detectedWords = [Word]()
     @State var keyword = ""
     @State var showCameraView = false
+    @State var selectedWord = ChineseWord(definitions: [])
     
     func handleText(sentences: [String]) {
         let characters = sentences.flatMap{ sentence in Array(sentence) }
         let words = characters.map{ character in Word(character: String(character))}
+        
         detectedWords = words
+
     }
     
     func handlePhotoReceived(image: UIImage?) {
@@ -48,7 +51,6 @@ struct ContentView: View {
         VStack {
             Spacer()
             HStack{
-     
                 TextField("打字", text: $keyword, onCommit: onCommitKeywordInputField)
                     .textFieldStyle(MyTextFieldStyle())
                     .keyboardType(.default)
@@ -70,7 +72,8 @@ struct ContentView: View {
                 )
                 .padding()
             }
-            WordList(words: $detectedWords)
+//            WordList(words: $detectedWords)
+            WordDefinitionListView(definitions: $selectedWord.definitions)
         }.sheet(isPresented: $showCameraView, content: {
             cameraView
                 .frame(maxHeight: 200)

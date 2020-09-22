@@ -75,13 +75,15 @@ struct CUHKLexisSelector {
     static let linksInWords = "td:nth-child(6) > div > a"
 }
 
-struct ChineseWord: Equatable {
+struct ChineseWord: Equatable, Identifiable{
+    var id = UUID()
     var ranking: Int?
     var cangjie: String?
     var definitions: [ChineseWordefinition]
 }
 
-struct ChineseWordefinition: Equatable {
+struct ChineseWordefinition: Equatable, Identifiable {
+    var id = UUID()
     var syllableYale: String?
     var audioLink: String?
     var homophones: [String]

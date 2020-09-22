@@ -25,8 +25,6 @@ class HtmlToWordDefinitionProcessorTest: XCTestCase {
     }
     
     func testSoup() throws {
-        
-        
         do{
             let doc: Document = try SwiftSoup.parse(oiHtml)
             let table = try doc.select("body > form > table:nth-child(1)  > tbody ")
@@ -43,21 +41,19 @@ class HtmlToWordDefinitionProcessorTest: XCTestCase {
         }
     }
     
-    func testShouldReturnAllDefinitions() throws {
+    func testShouldReturnAllDefinitions()  {
         let processor = HtmlToWordDefinitionProcessor(html: oiHtml)
-        
-        do {
-            let oi = try processor.getWord()
-            let expectedOi = ChineseWord(definitions: [
-                ChineseWordefinition(
-                    syllableYale: "oi3",
-                    homophones: ["鑀", "焥", "薆"],
-                    words: ["愛心", "愛情", "愛護", "愛惜", "博愛", "熱愛", "偏愛", "疼愛"]
-                )
-            ])
-            
-            XCTAssertEqual(oi?.definitions.first, expectedOi.definitions.first)
-        }
+
+        let oi = processor.getWord()
+        let expectedOi =  ChineseWord(definitions: [
+            ChineseWordefinition(
+                syllableYale: "oi3",
+                homophones: ["鑀", "焥", "薆"],
+                words: ["愛心", "愛情", "愛護", "愛惜", "博愛", "熱愛", "偏愛", "疼愛"]
+            )
+        ])
+
+        XCTAssertEqual(oi?.definitions.first, expectedOi.definitions.first)
 
     }
 }
