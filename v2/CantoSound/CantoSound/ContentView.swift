@@ -22,7 +22,7 @@ struct ContentView: View {
     @State var capturedImage = UIImage()
     @State var detectedSentences = [String]()
     @State var keyword = ""
-    @State var showCameraView = false
+    @State var showCameraView = true
     @State var selectedWord = ChineseWord(definitions: [])
     @State var loadingDefinition = false
     
@@ -33,6 +33,7 @@ struct ContentView: View {
     }
     
     func handleText(sentences: [String]) {
+        print(sentences)
         detectedSentences = sentences
     }
     
@@ -96,9 +97,9 @@ struct ContentView: View {
             }
             
         }.sheet(isPresented: $showCameraView, content: {
-            VStack{
-                cameraView
-                    .frame(maxHeight: 200)
+            VStack {
+            cameraView
+                .frame(height: 300)
                 Button(
                     action : {
                         cameraView.controller.photoCaptureCompletionBlock = handlePhotoReceived
@@ -111,7 +112,10 @@ struct ContentView: View {
                         .frame( width:40, height: 40)
                     })
                     .frame(height: 200)
+                
+                
                 WordCandidateListView(words: $detectedSentences, selectedWord: $keyword, shouldViewPresented: $showCameraView, onWordSelected: onCommitKeywordInputField)
+                Spacer()
             }
         })
     }

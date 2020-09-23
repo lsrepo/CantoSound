@@ -41,16 +41,13 @@ class CameraViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            do {
-                try self.configureDeviceInputs()
-                try self.configurePhotoOutput()
-            }
-            catch {
-                
-            }
+        do {
+            try self.configureDeviceInputs()
+            try self.configurePhotoOutput()
         }
-      
+        catch {
+            
+        }
     }
     
     func configureDeviceInputs() throws {
