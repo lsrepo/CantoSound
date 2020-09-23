@@ -20,7 +20,7 @@ struct MyTextFieldStyle: TextFieldStyle {
 
 struct ContentView: View {
     @State var capturedImage = UIImage()
-    @State var detectedWords = [Word]()
+    @State var detectedSentences = [String]()
     @State var keyword = ""
     @State var showCameraView = false
     @State var selectedWord = ChineseWord(definitions: [])
@@ -33,10 +33,7 @@ struct ContentView: View {
     }
     
     func handleText(sentences: [String]) {
-        let characters = sentences.flatMap{ sentence in Array(sentence) }
-        let words = characters.map{ character in Word(character: String(character))}
-        
-        detectedWords = words
+        detectedSentences = sentences
     }
     
     func handlePhotoReceived(image: UIImage?) {
@@ -48,7 +45,7 @@ struct ContentView: View {
     }
     
     func onCommitKeywordInputField() {
-        detectedWords = [Word(character: keyword)]
+        detectedSentences = [keyword]
         loadingDefinition = true
         DispatchQueue.global().async {
             if let word = self.lookUpDictionary(text: keyword) {
@@ -64,13 +61,17 @@ struct ContentView: View {
         VStack {
             Spacer(minLength: 50)
             HStack{
-                TextField("", text: $keyword, onCommit: onCommitKeywordInputField)
+//                , onCommit: onCommitKeywordInputField)
+                TextField("", text: $keyword)
                     .textFieldStyle(MyTextFieldStyle())
                     .keyboardType(.default)
-                    .font(.title)
+                    .font(.title3)
                     .lineLimit(1)
-                    .frame(width: 150, height: 150.0)
+                    .frame(width: 200, height: 150.0)
                     .padding()
+                    .onChange(of: keyword, perform: { value in
+                        onCommitKeywordInputField()
+                    })
                 
                 Button(
                     action : {
@@ -95,23 +96,24 @@ struct ContentView: View {
             }
             
         }.sheet(isPresented: $showCameraView, content: {
-            cameraView
-                .frame(maxHeight: 200)
-            Button(
-                action : {
-                    cameraView.controller.photoCaptureCompletionBlock = handlePhotoReceived
-                    cameraView.controller.capturePhoto()
-                    showCameraView = false
-                },
-                label : {Image(systemName: "camera.viewfinder")
-                    .resizable()
-                    .foregroundColor(.white)
-                    .frame( width:40, height: 40)
-                })
-                .frame(height: 200)
-            
+            VStack{
+                cameraView
+                    .frame(maxHeight: 200)
+                Button(
+                    action : {
+                        cameraView.controller.photoCaptureCompletionBlock = handlePhotoReceived
+                        cameraView.controller.capturePhoto()
+//                        showCameraView = false
+                    },
+                    label : {Image(systemName: "camera.viewfinder")
+                        .resizable()
+                        .foregroundColor(.white)
+                        .frame( width:40, height: 40)
+                    })
+                    .frame(height: 200)
+                WordCandidateListView(words: $detectedSentences, selectedWord: $keyword, shouldViewPresented: $showCameraView, onWordSelected: onCommitKeywordInputField)
+            }
         })
-        
     }
 }
 
