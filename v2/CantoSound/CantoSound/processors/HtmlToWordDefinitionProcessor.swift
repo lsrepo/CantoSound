@@ -17,11 +17,12 @@ class HtmlToWordDefinitionProcessor {
     
     func getDefinitionRowElements()  throws -> Elements{
         let doc: Document = try SwiftSoup.parse(html)
-        let table = try doc.select("body > form > table:nth-child(1)  > tbody ")
+        let table = try doc.select("#char_can_table > tbody")
         let headerRow = try table.select("tr:nth-child(1)")
-        
         try headerRow.remove()
-        return try table.select("tr")
+        
+        let definitionRows = try doc.select("tr:has(td.char_can_head)")
+        return definitionRows
     }
     
     func getWord() -> ChineseWord? {
@@ -41,19 +42,29 @@ class HtmlToWordDefinitionProcessor {
     func getDefinitions() throws -> [ChineseWordefinition] {
         return try getDefinitionRowElements()
             .map{ rowElement in
+                var homophones = [String]()
                 do {
-                    let links = try rowElement.select(CUHKLexisSelector.linksInWords)
-                    print("links", try links.html())
-                    try links.remove()
+                    let homophonesGood = try rowElement.select(CUHKLexisSelector.homophonesGood).map{try $0.text()}
+                    homophones.append(contentsOf: homophonesGood)
+                }
+                do {
+                    if (homophones.isEmpty){
+                        let homophonesAll = try rowElement.select(CUHKLexisSelector.homophonesAll).map{try $0.text()}
+                        homophones.append(contentsOf: homophonesAll)
+                    }
                 }
                 var delimiterSet =  CharacterSet.whitespacesAndNewlines
                 delimiterSet.insert(",")
             
                 return ChineseWordefinition(
-                    syllableYale: try rowElement.select(CUHKLexisSelector.syllable).text(),
-                    homophones: try rowElement.select(CUHKLexisSelector.homophones)
-                        .map{ try $0.text() }
-                        .filter{text in !text.starts(with: "[")},
+//                    syllableYale: try rowElement.select(CUHKLexisSelector.syllable).text(),
+                    syllableYale: try rowElement.select(CUHKLexisSelector.audioLink).attr("onClick")
+                        .lowercased()
+                        .replacingOccurrences(of: "_playsound( \'sound/", with: "")
+                        .replacingOccurrences(of: ".mp3\' );", with: ""),
+                    homophones: homophones,
+//                        .text()
+//                        .components(separatedBy: delimiterSet),
                     words: try rowElement.select(CUHKLexisSelector.words)
                         .text()
                         .components(separatedBy: delimiterSet)
@@ -68,11 +79,13 @@ struct CUHKLexisSelector {
     static let cangjie = "body > table:nth-child(1) > tbody > tr:nth-child(2) > td:nth-child(4)"
     
     // For each row
-    
+    static let audioLink = "td.char_can_head > a"
     static let syllable = "td:nth-child(1)"
-    static let homophones = "td:nth-child(4) > a"
-    static let words = "td:nth-child(6)"
-    static let linksInWords = "td:nth-child(6) > div > a"
+    static let homophonesGood = "td:nth-child(4) > div > a.rad-linkbold"
+    static let homophonesAll = "td:nth-child(4) > div > a"
+ 
+    static let words = "td:nth-child(5)"
+//    static let linksInWords = "td:nth-child(6) > div > a"
 }
 
 struct ChineseWord: Equatable, Identifiable{

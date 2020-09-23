@@ -27,15 +27,15 @@ class HtmlToWordDefinitionProcessorTest: XCTestCase {
     func testSoup() throws {
         do{
             let doc: Document = try SwiftSoup.parse(oiHtml)
-            let table = try doc.select("body > form > table:nth-child(1)  > tbody ")
+            let table = try doc.select("#char_can_table > tbody")
             let headerRow = try table.select("tr:nth-child(1)")
             try headerRow.remove()
             
-            let definitionRows = try table.select("tr")
+            let definitionRows = try doc.select("tr:has(td.char_can_head)")
             XCTAssertEqual(definitionRows.count, 2)
             
             let firstDefinitionRow = definitionRows.first()
-            XCTAssertEqual(try firstDefinitionRow?.select("td:nth-child(1)").text(), "oi3")
+            XCTAssertEqual(try firstDefinitionRow?.select("td:nth-child(1)").text(), "oi")
         } catch {
             print("error")
         }
@@ -43,17 +43,18 @@ class HtmlToWordDefinitionProcessorTest: XCTestCase {
     
     func testShouldReturnAllDefinitions()  {
         let processor = HtmlToWordDefinitionProcessor(html: oiHtml)
-
+	
         let oi = processor.getWord()
         let expectedOi =  ChineseWord(definitions: [
             ChineseWordefinition(
                 syllableYale: "oi3",
-                homophones: ["鑀", "焥", "薆"],
+                homophones: ["堨", "壒", "僾"],
                 words: ["愛心", "愛情", "愛護", "愛惜", "博愛", "熱愛", "偏愛", "疼愛"]
             )
         ])
 
-        XCTAssertEqual(oi?.definitions.first, expectedOi.definitions.first)
-
+        XCTAssertEqual(oi?.definitions.first?.syllableYale, expectedOi.definitions.first?.syllableYale)
+        XCTAssertEqual(oi?.definitions.first?.homophones, expectedOi.definitions.first?.homophones)
+        XCTAssertEqual(oi?.definitions.first?.words, expectedOi.definitions.first?.words)
     }
 }
