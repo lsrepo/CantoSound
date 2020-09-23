@@ -99,7 +99,7 @@ struct ContentView: View {
         }.sheet(isPresented: $showCameraView, content: {
             VStack {
             cameraView
-                .frame(height: 300)
+                .frame(maxHeight: 300)
                 Button(
                     action : {
                         cameraView.controller.photoCaptureCompletionBlock = handlePhotoReceived
@@ -111,11 +111,12 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .frame( width:40, height: 40)
                     })
-                    .frame(height: 200)
+                    .frame(height: 100)
                 
                 
                 WordCandidateListView(words: $detectedSentences, selectedWord: $keyword, shouldViewPresented: $showCameraView, onWordSelected: onCommitKeywordInputField)
-                Spacer()
+                    .frame(height: 300)
+//                Spacer()
             }
         })
     }

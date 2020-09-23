@@ -34,7 +34,7 @@ class CameraViewController : UIViewController {
     
     var photoCaptureCompletionBlock: ((UIImage?) -> Void)?
     var photoOutput: AVCapturePhotoOutput?
-    
+    var cameraPreview: AVCaptureVideoPreviewLayer?
     lazy var avSession = AVCaptureSession()
     lazy var session = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back)
     lazy var  camera = session.devices.first
@@ -42,6 +42,7 @@ class CameraViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
+//            self.view.frame = CGRect(x: 0, y: 0, width: 375, height: 300)
             try self.configureDeviceInputs()
             try self.configurePhotoOutput()
         }
@@ -54,9 +55,10 @@ class CameraViewController : UIViewController {
         guard camera != nil else { throw CameraControllerError.noCamerasAvailable }
         guard let input = try? AVCaptureDeviceInput(device : camera!) else { return }
         
-        let cameraPreview = AVCaptureVideoPreviewLayer(session: avSession)
+        cameraPreview = AVCaptureVideoPreviewLayer(session: avSession)
         let bounds = view.layer.bounds
         
+        guard let cameraPreview = cameraPreview  else {return}
         view.layer.addSublayer(cameraPreview)
         cameraPreview.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreview.bounds = bounds
@@ -91,7 +93,11 @@ class CameraViewController : UIViewController {
         let capturePhotoSettings = AVCapturePhotoSettings()
         capturePhotoSettings.flashMode = .off
         
+        print("cap: frame", self.view.frame)
+        print("cap: bounds", self.view.bounds)
         
+        print("cap: cam frame", self.cameraPreview?.frame)
+        print("cap: cam bounds", self.cameraPreview?.bounds)
         photoOutput?.capturePhoto(with: capturePhotoSettings, delegate: self)
         
     }
