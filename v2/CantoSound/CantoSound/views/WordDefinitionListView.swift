@@ -29,6 +29,7 @@ struct WordDefinitionListView_Previews: PreviewProvider {
     
     static var previews: some View {
         WordDefinitionListView(definitions: .constant(example))
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -47,14 +48,3 @@ struct WordDefinitionRow: View, Identifiable {
         }
     }
 }
-
-//struct WordDefinitionRowView_Previews: PreviewProvider {
-//    let d = ChineseWordefinition(
-//    syllableYale: "oi3",
-//    homophones: ["鑀", "焥", "薆"],
-//    words: ["愛心", "愛情", "愛護", "愛惜", "博愛", "熱愛", "偏愛", "疼愛"]
-//)
-//    static var previews: some View {
-//        WordDefinitionListView(definitions: <#Binding<[ChineseWordefinition]>#>)
-//    }
-//}

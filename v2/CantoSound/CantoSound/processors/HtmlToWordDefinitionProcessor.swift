@@ -25,6 +25,15 @@ class HtmlToWordDefinitionProcessor {
         return definitionRows
     }
     
+    func getNoteRowElements() throws -> Elements {
+        let doc: Document = try SwiftSoup.parse(html)
+        let noteRows = try doc.select("td.char_can_note")
+        // A sound follows a word
+        try noteRows.select("span").remove()
+        try noteRows.select("script").remove()
+        return noteRows
+    }
+    
     func getWord() -> ChineseWord? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
@@ -38,39 +47,49 @@ class HtmlToWordDefinitionProcessor {
         }
     }
     
-    
+    func getHomophones(rowElement: Element) throws ->  [String] {
+        var homophones = [String]()
+        
+        do {
+            let homophonesGood = try rowElement.select(CUHKLexisSelector.homophonesGood).map{try $0.text()}
+            homophones.append(contentsOf: homophonesGood)
+        }
+        do {
+            if (homophones.isEmpty){
+                let homophonesAll = try rowElement.select(CUHKLexisSelector.homophonesAll).map{try $0.text()}
+                homophones.append(contentsOf: homophonesAll)
+            }
+        }
+        
+        return homophones
+    }
+        
     func getDefinitions() throws -> [ChineseWordefinition] {
-        return try getDefinitionRowElements()
-            .map{ rowElement in
-                var homophones = [String]()
-                do {
-                    let homophonesGood = try rowElement.select(CUHKLexisSelector.homophonesGood).map{try $0.text()}
-                    homophones.append(contentsOf: homophonesGood)
-                }
-                do {
-                    if (homophones.isEmpty){
-                        let homophonesAll = try rowElement.select(CUHKLexisSelector.homophonesAll).map{try $0.text()}
-                        homophones.append(contentsOf: homophonesAll)
-                    }
-                }
-                var delimiterSet =  CharacterSet.whitespacesAndNewlines
-                delimiterSet.insert(",")
-            
-                return ChineseWordefinition(
-//                    syllableYale: try rowElement.select(CUHKLexisSelector.syllable).text(),
+        let noteElements = try getNoteRowElements()
+        let definitionElements = try getDefinitionRowElements()
+        
+        guard (noteElements.count == definitionElements.count) else {
+            return []
+        }
+        
+        var delimiterSet =  CharacterSet.whitespacesAndNewlines
+        delimiterSet.insert(",")
+        
+        return try definitionElements.enumerated()
+            .map{ (index, rowElement) in
+                ChineseWordefinition(
                     syllableYale: try rowElement.select(CUHKLexisSelector.audioLink).attr("onClick")
                         .lowercased()
                         .replacingOccurrences(of: "_playsound( \'sound/", with: "")
                         .replacingOccurrences(of: ".mp3\' );", with: ""),
-                    homophones: homophones,
-//                        .text()
-//                        .components(separatedBy: delimiterSet),
+                    homophones: try getHomophones(rowElement: rowElement),
                     words: try rowElement.select(CUHKLexisSelector.words)
                         .text()
                         .components(separatedBy: delimiterSet)
-                        .filter {!$0.isEmpty}
+                        .filter {!$0.isEmpty},
+                    note: try noteElements[index].text()
                 )
-        }
+            }
     }
 }
 
@@ -83,9 +102,9 @@ struct CUHKLexisSelector {
     static let syllable = "td:nth-child(1)"
     static let homophonesGood = "td:nth-child(4) > div > a.rad-linkbold"
     static let homophonesAll = "td:nth-child(4) > div > a"
- 
+    
     static let words = "td:nth-child(5)"
-//    static let linksInWords = "td:nth-child(6) > div > a"
+    static let note = "td.char_can_note"
 }
 
 struct ChineseWord: Equatable, Identifiable{
@@ -101,4 +120,5 @@ struct ChineseWordefinition: Equatable, Identifiable {
     var audioLink: String?
     var homophones: [String]
     var words: [String]
+    var note: String?
 }

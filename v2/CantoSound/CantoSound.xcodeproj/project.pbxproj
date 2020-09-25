@@ -13,6 +13,7 @@
 		EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA32517609500E748E0 /* CameraView.swift */; };
 		EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA8251839E000E748E0 /* WordList.swift */; };
 		EA26CE32251A2D3F000B1BA2 /* CantoneseDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */; };
+		EA2F9E64251E2C4D0011E175 /* wui.html in Resources */ = {isa = PBXBuildFile; fileRef = EA2F9E63251E2C4D0011E175 /* wui.html */; };
 		EA6455D52518E1AD00B6965A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = EA6455D42518E1AD00B6965A /* SwiftSoup */; };
 		EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */; };
 		EA6455DF2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */; };
@@ -52,6 +53,7 @@
 		EA0B3CA32517609500E748E0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		EA0B3CA8251839E000E748E0 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoneseDictionary.swift; sourceTree = "<group>"; };
+		EA2F9E63251E2C4D0011E175 /* wui.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = wui.html; sourceTree = "<group>"; };
 		EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessor.swift; sourceTree = "<group>"; };
 		EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessorTest.swift; sourceTree = "<group>"; };
 		EA6455F12518E98900B6965A /* oi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = oi.html; sourceTree = "<group>"; };
@@ -98,6 +100,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA2F9E5F251E294E0011E175 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				EA0B3CA8251839E000E748E0 /* WordList.swift */,
+				EAAC37692517286200876B26 /* ContentView.swift */,
+				EA0B3CA32517609500E748E0 /* CameraView.swift */,
+				EA6455F62519815700B6965A /* WordDefinitionListView.swift */,
+				EA0ACDC8251E18D7003A91CD /* ScanView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		EAAC375B2517286200876B26 = {
 			isa = PBXGroup;
 			children = (
@@ -121,17 +135,12 @@
 		EAAC37662517286200876B26 /* CantoSound */ = {
 			isa = PBXGroup;
 			children = (
+				EA2F9E5F251E294E0011E175 /* views */,
 				EAAC379525172B7D00876B26 /* processors */,
 				EAAC37672517286200876B26 /* CantoSoundApp.swift */,
-				EAAC37692517286200876B26 /* ContentView.swift */,
 				EAAC376B2517286300876B26 /* Assets.xcassets */,
 				EAAC37702517286300876B26 /* Info.plist */,
 				EAAC376D2517286300876B26 /* Preview Content */,
-				EA0B3CA32517609500E748E0 /* CameraView.swift */,
-				EA0B3CA8251839E000E748E0 /* WordList.swift */,
-				EA6455F62519815700B6965A /* WordDefinitionListView.swift */,
-				EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */,
-				EA0ACDC8251E18D7003A91CD /* ScanView.swift */,
 			);
 			path = CantoSound;
 			sourceTree = "<group>";
@@ -169,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				EAAC379625172BBF00876B26 /* ImageToTextProcessor.swift */,
+				EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */,
 				EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */,
 			);
 			path = processors;
@@ -177,6 +187,7 @@
 		EAAC379E25172E1700876B26 /* processors */ = {
 			isa = PBXGroup;
 			children = (
+				EA2F9E63251E2C4D0011E175 /* wui.html */,
 				EA6455F12518E98900B6965A /* oi.html */,
 				EAAC379F25172E3000876B26 /* ImageToTextProcessorTest.swift */,
 				EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */,
@@ -304,6 +315,7 @@
 			files = (
 				EA6455F22518E98A00B6965A /* oi.html in Resources */,
 				EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */,
+				EA2F9E64251E2C4D0011E175 /* wui.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,5 +32,4 @@ class CantoneseDictionary {
         let htmlToWordDefinitionProcessor = HtmlToWordDefinitionProcessor(html: html)
         return htmlToWordDefinitionProcessor.getWord()
     }
-    
 }

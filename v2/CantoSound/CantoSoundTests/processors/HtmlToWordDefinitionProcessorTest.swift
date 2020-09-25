@@ -13,15 +13,11 @@ import SwiftSoup
 class HtmlToWordDefinitionProcessorTest: XCTestCase {
     var oiHtml: String = ""
     
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func getHtmlFile(name: String) throws -> String {
         let bundle = Bundle(for: type(of: self))
-        let path = bundle .path(forResource: "oi", ofType: "html")
-        oiHtml = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
-    }
-    
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        let path = bundle .path(forResource: name, ofType: "html")
+        
+        return try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
     }
     
     func testSoup() throws {
@@ -41,8 +37,9 @@ class HtmlToWordDefinitionProcessorTest: XCTestCase {
         }
     }
     
-    func testShouldReturnAllDefinitions()  {
-        let processor = HtmlToWordDefinitionProcessor(html: oiHtml)
+    func testShouldReturnAllDefinitions_Oi() throws {
+        let htmlFile = try getHtmlFile(name: "oi")
+        let processor = HtmlToWordDefinitionProcessor(html: htmlFile)
 	
         let oi = processor.getWord()
         let expectedOi =  ChineseWord(definitions: [
@@ -56,5 +53,23 @@ class HtmlToWordDefinitionProcessorTest: XCTestCase {
         XCTAssertEqual(oi?.definitions.first?.syllableYale, expectedOi.definitions.first?.syllableYale)
         XCTAssertEqual(oi?.definitions.first?.homophones, expectedOi.definitions.first?.homophones)
         XCTAssertEqual(oi?.definitions.first?.words, expectedOi.definitions.first?.words)
+    }
+    
+    func testShouldReturnAllDefinitionsWithNote_Wui() throws {
+        let htmlFile = try getHtmlFile(name: "wui")
+        let processor = HtmlToWordDefinitionProcessor(html: htmlFile)
+    
+        let oi = processor.getWord()
+        let expectedOi =  ChineseWord(definitions: [
+            ChineseWordefinition(
+                syllableYale: "kui3",
+                homophones: ["繪", "檜", "澮", "儈", "憒", "聵", "鄶", "廥", "禬", "旝", "襘", "槶"],
+                words: [], note: "「會」的異讀字"
+            )
+        ])
+
+        XCTAssertEqual(oi?.definitions[1].syllableYale, expectedOi.definitions.first?.syllableYale)
+        XCTAssertEqual(oi?.definitions[1].homophones, expectedOi.definitions.first?.homophones)
+        XCTAssertEqual(oi?.definitions[1].note, expectedOi.definitions.first?.note)
     }
 }
