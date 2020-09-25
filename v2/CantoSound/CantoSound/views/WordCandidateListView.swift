@@ -19,6 +19,7 @@ struct WordCandidateListView: View {
             TagCloudView(words: $words, tags: words).onChange(of: words, perform: { value in
                 if (value.count == 1 && value.first?.count == 1){
                     selectedWord = value.first!
+                    onWordSelected()
                     shouldViewPresented = false
                 }
             })

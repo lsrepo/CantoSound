@@ -44,15 +44,11 @@ struct ContentView: View {
     }
     
     var wordInputField: some View {
-        TextField("", text: $keyword)
+        TextField("", text: $keyword, onCommit: onCommitKeywordInputField)
             .textFieldStyle(MyTextFieldStyle())
             .keyboardType(.default)
             .font(.title3)
             .lineLimit(1)
-            
-            .onChange(of: keyword, perform: { value in
-                onCommitKeywordInputField()
-            })
     }
     
     var cameraButton: some View {
