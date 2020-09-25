@@ -31,20 +31,7 @@ struct ContentView: View {
     func lookUpDictionary(text: String) -> ChineseWord? {
         return cantoneseDictionary.lookUp(character: text)
     }
-    
-    func handleText(sentences: [String]) {
-        print(sentences)
-        detectedSentences = sentences
-    }
-    
-    func handlePhotoReceived(image: UIImage?) {
-        guard let image = image else {return}
-        capturedImage = image
-        
-        let imageToTextProcessor = ImageToTextProcessor(textHandler: handleText)
-        imageToTextProcessor.detect(image: image)
-    }
-    
+
     func onCommitKeywordInputField() {
         detectedSentences = [keyword]
         loadingDefinition = true
@@ -55,8 +42,6 @@ struct ContentView: View {
             loadingDefinition = false
         }
     }
-    
-    var cameraView = CameraView()
     
     var body: some View {
         VStack {
@@ -97,27 +82,14 @@ struct ContentView: View {
             }
             
         }.sheet(isPresented: $showCameraView, content: {
-            VStack {
-            cameraView
-//                .frame(height: 200)
-                Button(
-                    action : {
-                        cameraView.controller.photoCaptureCompletionBlock = handlePhotoReceived
-                        cameraView.controller.capturePhoto()
-//                        showCameraView = false
-                    },
-                    label : {Image(systemName: "camera.viewfinder")
-                        .resizable()
-                        .foregroundColor(.white)
-                        .frame( width:40, height: 40)
-                    })
-//                    .frame(height: 100)
-                
-                
-                WordCandidateListView(words: $detectedSentences, selectedWord: $keyword, shouldViewPresented: $showCameraView, onWordSelected: onCommitKeywordInputField)
-                    .frame(minHeight: 300)
-//                Spacer()
-            }
+            ScanView(
+                capturedImage: $capturedImage,
+                detectedSentences: $detectedSentences,
+                keyword: $keyword,
+                showCameraView: $showCameraView,
+                selectedWord: $selectedWord,
+                loadingDefinition: $loadingDefinition,
+                onCommitKeywordInputField: onCommitKeywordInputField)
         })
     }
 }

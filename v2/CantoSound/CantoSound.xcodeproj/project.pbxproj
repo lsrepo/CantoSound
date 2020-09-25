@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA0ACDC9251E18D7003A91CD /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACDC8251E18D7003A91CD /* ScanView.swift */; };
 		EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */; };
 		EA0B3C90251744A900E748E0 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3C8F251744A900E748E0 /* TestError.swift */; };
 		EA0B3C962517520400E748E0 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C952517520400E748E0 /* CameraView */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA0ACDC8251E18D7003A91CD /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		EA0B3CA32517609500E748E0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				EA6455F62519815700B6965A /* WordDefinitionListView.swift */,
 				EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */,
 				EA19CD10251BB10200B1A8FE /* ScannerView.swift */,
+				EA0ACDC8251E18D7003A91CD /* ScanView.swift */,
 			);
 			path = CantoSound;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
 				EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */,
 				EA6455F72519815700B6965A /* WordDefinitionListView.swift in Sources */,
+				EA0ACDC9251E18D7003A91CD /* ScanView.swift in Sources */,
 				EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */,
 				EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */,
 			);
