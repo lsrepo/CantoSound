@@ -17,21 +17,11 @@ struct CameraView : UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: CameraView.UIViewControllerType, context: UIViewControllerRepresentableContext<CameraView>) {
-        
     }
 
 }
-
-struct CameraView_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraView()
-    }
-}
-
-
 
 class CameraViewController : UIViewController {
-    
     var photoCaptureCompletionBlock: ((UIImage?) -> Void)?
     var photoOutput: AVCapturePhotoOutput?
     var cameraPreview: AVCaptureVideoPreviewLayer?
@@ -42,7 +32,6 @@ class CameraViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
-//            self.view.frame = CGRect(x: 0, y: 0, width: 375, height: 300)
             try self.configureDeviceInputs()
             try self.configurePhotoOutput()
         }
@@ -97,17 +86,11 @@ class CameraViewController : UIViewController {
         let capturePhotoSettings = AVCapturePhotoSettings()
         capturePhotoSettings.flashMode = .off
         
-        print("cap: frame", self.view.frame)
-        print("cap: bounds", self.view.bounds)
-        
-        print("cap: cam frame", self.cameraPreview?.frame)
-        print("cap: cam bounds", self.cameraPreview?.bounds)
         photoOutput?.capturePhoto(with: capturePhotoSettings, delegate: self)
         
     }
     // TODO: move to extension
     func cropImage(imageToCrop:UIImage, toRect rect:CGRect) -> UIImage{
-        
         let imageRef:CGImage = imageToCrop.cgImage!.cropping(to: rect)!
         let cropped:UIImage = UIImage(cgImage:imageRef)
         return cropped
@@ -177,7 +160,6 @@ extension UIImage {
         return scaledImage
     }
 }
-
 
 extension UIImage {
     func scaleImage(toWidth newWidth: CGFloat) -> UIImage {

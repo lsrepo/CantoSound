@@ -10,11 +10,8 @@
 		EA0ACDC9251E18D7003A91CD /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACDC8251E18D7003A91CD /* ScanView.swift */; };
 		EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */; };
 		EA0B3C90251744A900E748E0 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3C8F251744A900E748E0 /* TestError.swift */; };
-		EA0B3C962517520400E748E0 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C952517520400E748E0 /* CameraView */; };
-		EA0B3C9F2517554900E748E0 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = EA0B3C9E2517554900E748E0 /* SwiftUICam */; };
 		EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA32517609500E748E0 /* CameraView.swift */; };
 		EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA8251839E000E748E0 /* WordList.swift */; };
-		EA19CD11251BB10200B1A8FE /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19CD10251BB10200B1A8FE /* ScannerView.swift */; };
 		EA26CE32251A2D3F000B1BA2 /* CantoneseDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */; };
 		EA6455D52518E1AD00B6965A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = EA6455D42518E1AD00B6965A /* SwiftSoup */; };
 		EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */; };
@@ -54,7 +51,6 @@
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		EA0B3CA32517609500E748E0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		EA0B3CA8251839E000E748E0 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
-		EA19CD10251BB10200B1A8FE /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoneseDictionary.swift; sourceTree = "<group>"; };
 		EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessor.swift; sourceTree = "<group>"; };
 		EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessorTest.swift; sourceTree = "<group>"; };
@@ -81,8 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA0B3C9F2517554900E748E0 /* SwiftUICam in Frameworks */,
-				EA0B3C962517520400E748E0 /* CameraView in Frameworks */,
 				EA6455D52518E1AD00B6965A /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +131,6 @@
 				EA0B3CA8251839E000E748E0 /* WordList.swift */,
 				EA6455F62519815700B6965A /* WordDefinitionListView.swift */,
 				EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */,
-				EA19CD10251BB10200B1A8FE /* ScannerView.swift */,
 				EA0ACDC8251E18D7003A91CD /* ScanView.swift */,
 			);
 			path = CantoSound;
@@ -208,8 +201,6 @@
 			);
 			name = CantoSound;
 			packageProductDependencies = (
-				EA0B3C952517520400E748E0 /* CameraView */,
-				EA0B3C9E2517554900E748E0 /* SwiftUICam */,
 				EA6455D42518E1AD00B6965A /* SwiftSoup */,
 			);
 			productName = CantoSound;
@@ -284,8 +275,6 @@
 			);
 			mainGroup = EAAC375B2517286200876B26;
 			packageReferences = (
-				EA0B3C942517520400E748E0 /* XCRemoteSwiftPackageReference "CameraView" */,
-				EA0B3C9D2517554900E748E0 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
 				EA6455D32518E1AD00B6965A /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = EAAC37652517286200876B26 /* Products */;
@@ -332,7 +321,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA19CD11251BB10200B1A8FE /* ScannerView.swift in Sources */,
 				EAAC376A2517286200876B26 /* ContentView.swift in Sources */,
 				EAAC379725172BBF00876B26 /* ImageToTextProcessor.swift in Sources */,
 				EA26CE32251A2D3F000B1BA2 /* CantoneseDictionary.swift in Sources */,
@@ -666,22 +654,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EA0B3C942517520400E748E0 /* XCRemoteSwiftPackageReference "CameraView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/brettfazio/CameraView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
-			};
-		};
-		EA0B3C9D2517554900E748E0 /* XCRemoteSwiftPackageReference "SwiftUICam" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pierreveron/SwiftUICam";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		EA6455D32518E1AD00B6965A /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
@@ -693,16 +665,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EA0B3C952517520400E748E0 /* CameraView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EA0B3C942517520400E748E0 /* XCRemoteSwiftPackageReference "CameraView" */;
-			productName = CameraView;
-		};
-		EA0B3C9E2517554900E748E0 /* SwiftUICam */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EA0B3C9D2517554900E748E0 /* XCRemoteSwiftPackageReference "SwiftUICam" */;
-			productName = SwiftUICam;
-		};
 		EA6455D42518E1AD00B6965A /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EA6455D32518E1AD00B6965A /* XCRemoteSwiftPackageReference "SwiftSoup" */;

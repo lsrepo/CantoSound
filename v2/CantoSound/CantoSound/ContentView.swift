@@ -31,9 +31,9 @@ struct ContentView: View {
     func lookUpDictionary(text: String) -> ChineseWord? {
         return cantoneseDictionary.lookUp(character: text)
     }
-
+    
     func onCommitKeywordInputField() {
-        detectedSentences = [keyword]
+        
         loadingDefinition = true
         DispatchQueue.global().async {
             if let word = self.lookUpDictionary(text: keyword) {
@@ -43,32 +43,35 @@ struct ContentView: View {
         }
     }
     
+    var wordInputField: some View {
+        TextField("", text: $keyword)
+            .textFieldStyle(MyTextFieldStyle())
+            .keyboardType(.default)
+            .font(.title3)
+            .lineLimit(1)
+            
+            .onChange(of: keyword, perform: { value in
+                onCommitKeywordInputField()
+            })
+    }
+    
+    var cameraButton: some View {
+        Button(
+            action : {
+                showCameraView = true
+            },
+            label : {
+                Image(systemName: "camera.circle").resizable().foregroundColor(.white)
+            }
+        )
+    }
+    
     var body: some View {
         VStack {
             Spacer(minLength: 50)
             HStack{
-//                , onCommit: onCommitKeywordInputField)
-                TextField("", text: $keyword)
-                    .textFieldStyle(MyTextFieldStyle())
-                    .keyboardType(.default)
-                    .font(.title3)
-                    .lineLimit(1)
-                    .frame(width: 200, height: 150.0)
-                    .padding()
-                    .onChange(of: keyword, perform: { value in
-                        onCommitKeywordInputField()
-                    })
-                
-                Button(
-                    action : {
-                        showCameraView = true
-                    },
-                    label : { Image(systemName: "camera.circle")
-                        .resizable()
-                        .foregroundColor(.white)
-                        .frame( width:40, height: 40)}
-                )
-                .padding()
+                wordInputField.frame(width: 200, height: 150.0).padding()
+                cameraButton.frame( width:40, height: 40).padding()
             }
             ZStack(alignment: .top){
                 ProgressView()
@@ -80,15 +83,16 @@ struct ContentView: View {
                 WordDefinitionListView(definitions: $selectedWord.definitions)
                     .opacity(loadingDefinition ? 0 : 1 )
             }
-            
-        }.sheet(isPresented: $showCameraView, content: {
+        }
+        .sheet(isPresented: $showCameraView, content: {
             ScanView(
                 capturedImage: $capturedImage,
                 detectedSentences: $detectedSentences,
                 keyword: $keyword,
                 showCameraView: $showCameraView,
                 loadingDefinition: $loadingDefinition,
-                onCommitKeywordInputField: onCommitKeywordInputField)
+                onCommitKeywordInputField: onCommitKeywordInputField
+            )
         })
     }
 }

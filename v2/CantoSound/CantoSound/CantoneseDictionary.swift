@@ -8,8 +8,6 @@
 import Foundation
 
 class CantoneseDictionary {
-
-    // TODO: Use async if necessary
     func checkCuhk(text: String) -> String? {
         guard let character = text.prefix(1).addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {
             return nil

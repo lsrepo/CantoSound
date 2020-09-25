@@ -15,13 +15,12 @@ struct WordCandidateListView: View {
     var onWordSelected: () -> Void
     
     var body: some View {
-        HStack{
+        ScrollView(){
             TagCloudView(words: $words, tags: words).onChange(of: words, perform: { value in
                 if (value.count == 1 && value.first?.count == 1){
                     selectedWord = value.first!
                     shouldViewPresented = false
                 }
-                
             })
         }
     }
@@ -29,6 +28,9 @@ struct WordCandidateListView: View {
 
 struct WordCandidateListViewPreviews: PreviewProvider {
     static var example = [
+        "和式客房",
+        "你好嗎",
+        "查良庸",
         "和式客房",
         "你好嗎",
         "查良庸"
@@ -100,7 +102,7 @@ struct TagCloudView: View {
         }, label: {
             Text(text)
                 .padding(.all, 10)
-                .font(.title2)
+                .font(.title3)
                 .background(Color.white)
                 .foregroundColor(Color.black)
                 .cornerRadius(10)

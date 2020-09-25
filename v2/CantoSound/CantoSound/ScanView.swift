@@ -32,29 +32,25 @@ struct ScanView: View {
     let cameraView = CameraView()
     var body: some View {
         VStack {
-            cameraView
+            cameraView.frame(height: 200)
             Button(
                 action : {
                     cameraView.controller.photoCaptureCompletionBlock = handlePhotoReceived
                     cameraView.controller.capturePhoto()
-                    //                        showCameraView = false
                 },
                 label : {Image(systemName: "camera.viewfinder")
                     .resizable()
                     .foregroundColor(.white)
                     .frame( width:40, height: 40)
-                })
+                }).padding()
             
             WordCandidateListView(words: $detectedSentences, selectedWord: $keyword, shouldViewPresented: $showCameraView, onWordSelected: onCommitKeywordInputField)
-                .frame(minHeight: 300)
         }
     }
 }
 
 struct ScanView_Previews: PreviewProvider {
-    static func emptyFn() {
-        
-    }
+    static func emptyFn() {}
     static var previews: some View {
         Group {
             ScanView(

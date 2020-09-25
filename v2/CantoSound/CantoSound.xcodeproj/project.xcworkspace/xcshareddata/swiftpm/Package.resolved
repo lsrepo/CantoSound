@@ -2,30 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "CameraView",
-        "repositoryURL": "https://github.com/brettfazio/CameraView",
-        "state": {
-          "branch": null,
-          "revision": "bb528e129ac23f2888dee51a309bbd4b10374673",
-          "version": "0.0.1"
-        }
-      },
-      {
         "package": "SwiftSoup",
         "repositoryURL": "https://github.com/scinfu/SwiftSoup",
         "state": {
           "branch": null,
           "revision": "774dc9c7213085db8aa59595e27c1cd22e428904",
           "version": "2.3.2"
-        }
-      },
-      {
-        "package": "SwiftUICam",
-        "repositoryURL": "https://github.com/pierreveron/SwiftUICam",
-        "state": {
-          "branch": "master",
-          "revision": "6e85adae49b26d734bf3810b6d237d2688cc976a",
-          "version": null
         }
       }
     ]
