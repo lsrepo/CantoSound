@@ -11,7 +11,7 @@
 		EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */; };
 		EA0B3C90251744A900E748E0 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3C8F251744A900E748E0 /* TestError.swift */; };
 		EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA32517609500E748E0 /* CameraView.swift */; };
-		EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA8251839E000E748E0 /* WordList.swift */; };
+		EA0B3CA9251839E000E748E0 /* WordCandidateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3CA8251839E000E748E0 /* WordCandidateListView.swift */; };
 		EA26CE32251A2D3F000B1BA2 /* CantoneseDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */; };
 		EA2F9E64251E2C4D0011E175 /* wui.html in Resources */ = {isa = PBXBuildFile; fileRef = EA2F9E63251E2C4D0011E175 /* wui.html */; };
 		EA6455D52518E1AD00B6965A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = EA6455D42518E1AD00B6965A /* SwiftSoup */; };
@@ -51,7 +51,7 @@
 		EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		EA0B3CA32517609500E748E0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		EA0B3CA8251839E000E748E0 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
+		EA0B3CA8251839E000E748E0 /* WordCandidateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCandidateListView.swift; sourceTree = "<group>"; };
 		EA26CE31251A2D3F000B1BA2 /* CantoneseDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoneseDictionary.swift; sourceTree = "<group>"; };
 		EA2F9E63251E2C4D0011E175 /* wui.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = wui.html; sourceTree = "<group>"; };
 		EA6455D92518E20300B6965A /* HtmlToWordDefinitionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessor.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		EA2F9E5F251E294E0011E175 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				EA0B3CA8251839E000E748E0 /* WordList.swift */,
+				EA0B3CA8251839E000E748E0 /* WordCandidateListView.swift */,
 				EAAC37692517286200876B26 /* ContentView.swift */,
 				EA0B3CA32517609500E748E0 /* CameraView.swift */,
 				EA6455F62519815700B6965A /* WordDefinitionListView.swift */,
@@ -340,7 +340,7 @@
 				EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */,
 				EA6455F72519815700B6965A /* WordDefinitionListView.swift in Sources */,
 				EA0ACDC9251E18D7003A91CD /* ScanView.swift in Sources */,
-				EA0B3CA9251839E000E748E0 /* WordList.swift in Sources */,
+				EA0B3CA9251839E000E748E0 /* WordCandidateListView.swift in Sources */,
 				EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
