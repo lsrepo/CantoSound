@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct WordDefinitionListView: View {
     @Binding var definitions: [ChineseWordefinition]
@@ -13,14 +14,16 @@ struct WordDefinitionListView: View {
     var body: some View {
         List {
             ForEach(definitions) {
-                definition in WordDefinitionRow(definition: WordDefinitionRowData(
-                    homophone: definition.homophones.first ?? "",
-                    syllabel: definition.syllableYale ?? "",
-                    longText: definition.words
-                        .joined(separator: ", ")
-                        .appending(definition.words.isEmpty ? "" : " ")
-                        .appending(definition.note ?? "")
-                )
+                definition in WordDefinitionRow(
+                    definition: WordDefinitionRowData(
+                        homophone: definition.homophones.first ?? "",
+                        syllabel: definition.syllableYale ?? "",
+                        longText: definition.words
+                            .joined(separator: ", ")
+                            .appending(definition.words.isEmpty ? "" : " ")
+                            .appending(definition.note ?? ""),
+                        audioLink: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/sound/\(definition.syllableYale).Mp3"
+                    )
                 )
             }
         }
@@ -31,7 +34,7 @@ struct WordDefinitionRowData {
     var homophone: String
     var syllabel: String
     var longText: String
-    
+    var audioLink: String
 }
 
 struct WordDefinitionListView_Previews: PreviewProvider {
@@ -52,16 +55,22 @@ struct WordDefinitionListView_Previews: PreviewProvider {
 struct WordDefinitionRow: View, Identifiable {
     var definition: WordDefinitionRowData
     var id = UUID()
-
+    
+    func playSound() {
+        let url = URL(fileURLWithPath: definition.audioLink)
+        Sounds.playSounds(soundfile: url)
+    }
+    
     var body: some View {
         HStack{
             VStack{
-                Text(definition.homophone)
-                    .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                Text(definition.syllabel)
-                    .font(.title3)
+                Text(definition.homophone).font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+                Text(definition.syllabel).font(.title3)
             }.padding()
             Text(definition.longText)
         }
+        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+            playSound()
+        })
     }
 }

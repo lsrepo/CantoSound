@@ -19,6 +19,7 @@
 		EA6455DF2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */; };
 		EA6455F22518E98A00B6965A /* oi.html in Resources */ = {isa = PBXBuildFile; fileRef = EA6455F12518E98900B6965A /* oi.html */; };
 		EA6455F72519815700B6965A /* WordDefinitionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6455F62519815700B6965A /* WordDefinitionListView.swift */; };
+		EA95472A251E4A1E005B2A59 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA954729251E4A1E005B2A59 /* Sound.swift */; };
 		EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37672517286200876B26 /* CantoSoundApp.swift */; };
 		EAAC376A2517286200876B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC37692517286200876B26 /* ContentView.swift */; };
 		EAAC376C2517286300876B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC376B2517286300876B26 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		EA6455DE2518E25800B6965A /* HtmlToWordDefinitionProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToWordDefinitionProcessorTest.swift; sourceTree = "<group>"; };
 		EA6455F12518E98900B6965A /* oi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = oi.html; sourceTree = "<group>"; };
 		EA6455F62519815700B6965A /* WordDefinitionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionListView.swift; sourceTree = "<group>"; };
+		EA954729251E4A1E005B2A59 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		EAAC37642517286200876B26 /* CantoSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CantoSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC37672517286200876B26 /* CantoSoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoSoundApp.swift; sourceTree = "<group>"; };
 		EAAC37692517286200876B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				EAAC376B2517286300876B26 /* Assets.xcassets */,
 				EAAC37702517286300876B26 /* Info.plist */,
 				EAAC376D2517286300876B26 /* Preview Content */,
+				EA954729251E4A1E005B2A59 /* Sound.swift */,
 			);
 			path = CantoSound;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				EA26CE32251A2D3F000B1BA2 /* CantoneseDictionary.swift in Sources */,
 				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
 				EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */,
+				EA95472A251E4A1E005B2A59 /* Sound.swift in Sources */,
 				EA6455F72519815700B6965A /* WordDefinitionListView.swift in Sources */,
 				EA0ACDC9251E18D7003A91CD /* ScanView.swift in Sources */,
 				EA0B3CA9251839E000E748E0 /* WordCandidateListView.swift in Sources */,

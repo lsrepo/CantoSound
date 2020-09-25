@@ -116,7 +116,7 @@ struct ChineseWord: Equatable, Identifiable{
 
 struct ChineseWordefinition: Equatable, Identifiable {
     var id = UUID()
-    var syllableYale: String?
+    var syllableYale: String
     var audioLink: String?
     var homophones: [String]
     var words: [String]
