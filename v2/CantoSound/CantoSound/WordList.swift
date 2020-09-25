@@ -30,8 +30,8 @@ struct WordCandidateListView: View {
 struct WordCandidateListViewPreviews: PreviewProvider {
     static var example = [
         "和式客房",
-        "你",
-        "查"
+        "你好嗎",
+        "查良庸"
     ]
     @Binding var words: [String]
     
@@ -39,39 +39,9 @@ struct WordCandidateListViewPreviews: PreviewProvider {
         WordCandidateListView(words: .constant(example), selectedWord: .constant(""), shouldViewPresented: .constant(true)){
             
         }
+        .preferredColorScheme(.dark)
     }
 }
-
-struct WordRow: View {
-    var word: Word
-    var id: UUID
-    var body: some View {
-        HStack {
-            Text(word.character)
-            Spacer()
-        }
-    }
-}
-
-struct Word: Identifiable , Hashable{
-    var id = UUID()
-    var character: String
-    var defintion: String?
-}
-
-
-
-struct LandmarkRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            WordRow(word: Word(character: "a"), id: UUID())
-                .previewLayout(.fixed(width: 300, height: 70))
-            WordRow(word: Word(character: "ab"), id: UUID())
-                .previewLayout(.fixed(width: 300, height: 70))
-        }
-    }
-}
-
 
 struct TagCloudView: View {
     @Binding var words: [String]
