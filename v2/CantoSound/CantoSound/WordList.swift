@@ -131,11 +131,11 @@ struct TagCloudView: View {
             words = Array(text).map{ te in  String(te) }
         }, label: {
             Text(text)
-                .padding(.all, 5)
-                .font(.body)
-                .background(Color.blue)
-                .foregroundColor(Color.white)
-                .cornerRadius(5)
+                .padding(.all, 10)
+                .font(.title2)
+                .background(Color.white)
+                .foregroundColor(Color.black)
+                .cornerRadius(10)
         })
     }
     

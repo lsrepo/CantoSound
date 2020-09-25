@@ -51,6 +51,7 @@ class CameraViewController : UIViewController {
         }
     }
     
+    
     func configureDeviceInputs() throws {
         guard camera != nil else { throw CameraControllerError.noCamerasAvailable }
         guard let input = try? AVCaptureDeviceInput(device : camera!) else { return }
@@ -59,6 +60,9 @@ class CameraViewController : UIViewController {
         let bounds = view.layer.bounds
         
         guard let cameraPreview = cameraPreview  else {return}
+        
+//        cameraPreview.metadataOutputRectConverted(fromLayerRect: CGRect(x: 0,y: 0,width: 375,height: 200))
+        
         view.layer.addSublayer(cameraPreview)
         cameraPreview.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreview.bounds = bounds
