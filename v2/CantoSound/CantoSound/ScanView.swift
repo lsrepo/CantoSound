@@ -12,7 +12,6 @@ struct ScanView: View {
     @Binding var detectedSentences: [String]
     @Binding var keyword: String
     @Binding var showCameraView: Bool
-    @Binding var selectedWord: ChineseWord
     @Binding var loadingDefinition: Bool
     
     var onCommitKeywordInputField: () -> Void
@@ -48,6 +47,28 @@ struct ScanView: View {
             
             WordCandidateListView(words: $detectedSentences, selectedWord: $keyword, shouldViewPresented: $showCameraView, onWordSelected: onCommitKeywordInputField)
                 .frame(minHeight: 300)
+        }
+    }
+}
+
+struct ScanView_Previews: PreviewProvider {
+    static func emptyFn() {
+        
+    }
+    static var previews: some View {
+        Group {
+            ScanView(
+                capturedImage: .constant(UIImage()),
+                detectedSentences: .constant([
+                    "張國榮",
+                    "穌黎世"
+                ]),
+                keyword: .constant(""),
+                showCameraView: .constant(true),
+                loadingDefinition: .constant(false),
+                onCommitKeywordInputField: emptyFn
+            )
+            .preferredColorScheme(.dark)
         }
     }
 }

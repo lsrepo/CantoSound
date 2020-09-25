@@ -35,7 +35,6 @@ struct WordCandidateListViewPreviews: PreviewProvider {
     ]
     @Binding var words: [String]
     
-    
     static var previews: some View {
         WordCandidateListView(words: .constant(example), selectedWord: .constant(""), shouldViewPresented: .constant(true)){
             
@@ -56,7 +55,6 @@ struct WordRow: View {
 
 struct Word: Identifiable , Hashable{
     var id = UUID()
-    
     var character: String
     var defintion: String?
 }

@@ -87,7 +87,6 @@ struct ContentView: View {
                 detectedSentences: $detectedSentences,
                 keyword: $keyword,
                 showCameraView: $showCameraView,
-                selectedWord: $selectedWord,
                 loadingDefinition: $loadingDefinition,
                 onCommitKeywordInputField: onCommitKeywordInputField)
         })
