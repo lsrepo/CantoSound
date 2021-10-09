@@ -31,13 +31,12 @@ class CameraViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         do {
             try self.configureDeviceInputs()
             try self.configurePhotoOutput()
         }
-        catch {
-            
-        }
+        catch {}
     }
     
     

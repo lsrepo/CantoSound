@@ -39,10 +39,14 @@ struct WordCandidateListViewPreviews: PreviewProvider {
     @Binding var words: [String]
     
     static var previews: some View {
-        WordCandidateListView(words: .constant(example), selectedWord: .constant(""), shouldViewPresented: .constant(true)){
-            
+        ForEach(ColorScheme.allCases, 	id: \.self ){ scheme in
+            WordCandidateListView(
+                words: .constant(example),
+                selectedWord: .constant(""),
+                shouldViewPresented: .constant(true)
+            ){}
+            .preferredColorScheme(scheme)
         }
-        .preferredColorScheme(.dark)
     }
 }
 
@@ -104,8 +108,8 @@ struct TagCloudView: View {
             Text(text)
                 .padding(.all, 10)
                 .font(.title3)
-                .background(Color.white)
-                .foregroundColor(Color.black)
+                .background(Color(UIColor.secondarySystemBackground))
+                .foregroundColor(.primary)
                 .cornerRadius(10)
         })
     }

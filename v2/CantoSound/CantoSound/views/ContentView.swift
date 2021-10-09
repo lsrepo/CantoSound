@@ -13,7 +13,7 @@ struct MyTextFieldStyle: TextFieldStyle {
             .padding(10)
             .background(
                 RoundedRectangle(cornerRadius: 3, style: .continuous)
-                    .stroke(Color.white, lineWidth: 1.5)
+                    .stroke(Color.primary, lineWidth: 1.5)
             ).padding()
     }
 }
@@ -25,6 +25,7 @@ struct ContentView: View {
     @State var showCameraView = true
     @State var selectedWord = ChineseWord(definitions: [])
     @State var loadingDefinition = false
+    @State var cameraView = CameraView()
     
     var cantoneseDictionary = CantoneseDictionary()
     
@@ -54,14 +55,14 @@ struct ContentView: View {
     var cameraButton: some View {
         Button(
             action : {
-                showCameraView = true
+                showCameraView.toggle()
             },
             label : {
-                Image(systemName: "camera.circle").resizable().foregroundColor(.white)
+                Image(systemName: "camera.circle").resizable().foregroundColor(Color.primary)
             }
         )
     }
-    
+
     var body: some View {
         VStack {
             Spacer(minLength: 50)
@@ -75,6 +76,7 @@ struct ContentView: View {
                     .progressViewStyle(CircularProgressViewStyle(tint: .yellow))
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                     .opacity(loadingDefinition ? 1 : 0 )
+                    
                 
                 WordDefinitionListView(definitions: $selectedWord.definitions)
                     .opacity(loadingDefinition ? 0 : 1 )
@@ -82,6 +84,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showCameraView, content: {
             ScanView(
+                cameraView: $cameraView,
                 capturedImage: $capturedImage,
                 detectedSentences: $detectedSentences,
                 keyword: $keyword,
@@ -95,10 +98,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
-                .preferredColorScheme(.dark)
-            ContentView()
-        }
-    }
+           ForEach(ColorScheme.allCases, id: \.self, content: ContentView().preferredColorScheme)
+       }
 }

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ScanView: View {
+    @Binding var cameraView: CameraView
     @Binding var capturedImage: UIImage
     @Binding var detectedSentences: [String]
     @Binding var keyword: String
     @Binding var showCameraView: Bool
     @Binding var loadingDefinition: Bool
+   
     
     var onCommitKeywordInputField: () -> Void
     
@@ -29,7 +31,8 @@ struct ScanView: View {
         imageToTextProcessor.detect(image: image)
     }
     
-    let cameraView = CameraView()
+
+  
     var body: some View {
         VStack {
             cameraView.frame(height: 200)
@@ -40,8 +43,8 @@ struct ScanView: View {
                 },
                 label : {Image(systemName: "camera.viewfinder")
                     .resizable()
-                    .foregroundColor(.white)
                     .frame( width:40, height: 40)
+                    .foregroundColor(Color.primary)
                 }).padding()
             
             WordCandidateListView(words: $detectedSentences, selectedWord: $keyword, shouldViewPresented: $showCameraView, onWordSelected: onCommitKeywordInputField)
@@ -52,19 +55,20 @@ struct ScanView: View {
 struct ScanView_Previews: PreviewProvider {
     static func emptyFn() {}
     static var previews: some View {
-        Group {
-            ScanView(
-                capturedImage: .constant(UIImage()),
-                detectedSentences: .constant([
-                    "張國榮",
-                    "穌黎世"
-                ]),
-                keyword: .constant(""),
-                showCameraView: .constant(true),
-                loadingDefinition: .constant(false),
-                onCommitKeywordInputField: emptyFn
-            )
-            .preferredColorScheme(.dark)
-        }
+        ForEach(ColorScheme.allCases, id: \.self, content:
+                ScanView(
+                    cameraView: .constant(CameraView()),
+                    capturedImage: .constant(UIImage()),
+                    detectedSentences: .constant([
+                        "張國榮",
+                        "穌黎世"
+                    ]),
+                    keyword: .constant(""),
+                    showCameraView: .constant(true),
+                    loadingDefinition: .constant(false),
+                    onCommitKeywordInputField: emptyFn
+                )
+                .preferredColorScheme
+        )
     }
 }
