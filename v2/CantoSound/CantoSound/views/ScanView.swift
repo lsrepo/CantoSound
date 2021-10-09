@@ -35,7 +35,7 @@ struct ScanView: View {
   
     var body: some View {
         VStack {
-            cameraView.frame(height: 200)
+            cameraView.frame(height: UIScreen.screenHeight / 3)
             Button(
                 action : {
                     cameraView.controller.photoCaptureCompletionBlock = handlePhotoReceived
@@ -70,5 +70,6 @@ struct ScanView_Previews: PreviewProvider {
                 )
                 .preferredColorScheme
         )
+        .previewDevice("iPad (8th generation)")
     }
 }

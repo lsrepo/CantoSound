@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27512C2F27118D9600DD7C91 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27512C2E27118D9600DD7C91 /* UIScreenExtension.swift */; };
 		EA0ACDC9251E18D7003A91CD /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACDC8251E18D7003A91CD /* ScanView.swift */; };
 		EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */; };
 		EA0B3C90251744A900E748E0 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3C8F251744A900E748E0 /* TestError.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27512C2E27118D9600DD7C91 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		EA0ACDC8251E18D7003A91CD /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				EAAC37702517286300876B26 /* Info.plist */,
 				EAAC376D2517286300876B26 /* Preview Content */,
 				EA954729251E4A1E005B2A59 /* Sound.swift */,
+				27512C2E27118D9600DD7C91 /* UIScreenExtension.swift */,
 			);
 			path = CantoSound;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			files = (
 				EAAC376A2517286200876B26 /* ContentView.swift in Sources */,
 				EAAC379725172BBF00876B26 /* ImageToTextProcessor.swift in Sources */,
+				27512C2F27118D9600DD7C91 /* UIScreenExtension.swift in Sources */,
 				EA26CE32251A2D3F000B1BA2 /* CantoneseDictionary.swift in Sources */,
 				EAAC37682517286200876B26 /* CantoSoundApp.swift in Sources */,
 				EA0B3CA42517609500E748E0 /* CameraView.swift in Sources */,

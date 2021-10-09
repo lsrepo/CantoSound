@@ -21,14 +21,24 @@ struct CameraView : UIViewControllerRepresentable {
 
 }
 
+
+struct CameraView_Previews: PreviewProvider {
+    static var previews: some View {
+           ForEach(ColorScheme.allCases, id: \.self, content: CameraView().preferredColorScheme)
+       }
+}
+
+
+
 class CameraViewController : UIViewController {
     var photoCaptureCompletionBlock: ((UIImage?) -> Void)?
     var photoOutput: AVCapturePhotoOutput?
     var cameraPreview: AVCaptureVideoPreviewLayer?
     lazy var avSession = AVCaptureSession()
     lazy var session = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back)
-    lazy var  camera = session.devices.first
-    
+    lazy var camera = session.devices.first
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,25 +55,21 @@ class CameraViewController : UIViewController {
         guard let input = try? AVCaptureDeviceInput(device : camera!) else { return }
         
         cameraPreview = AVCaptureVideoPreviewLayer(session: avSession)
-        let bounds = view.layer.bounds
-        
+   
         guard let cameraPreview = cameraPreview  else {return}
-        
-//        cameraPreview.metadataOutputRectConverted(fromLayerRect: CGRect(x: 0,y: 0,width: 375,height: 200))
         
         view.layer.addSublayer(cameraPreview)
         cameraPreview.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        let bounds = view.layer.bounds
         cameraPreview.bounds = bounds
         cameraPreview.position = CGPoint(x:bounds.midX, y:bounds.midY)
         
         let maskLayer = CALayer()
         maskLayer.masksToBounds = true
-        
-        maskLayer.frame = CGRect(x: 0,y: 0,width: 375,height: 200)
+        maskLayer.frame = CGRect(x: 0,y: 0,width: cameraPreview.frame.width ,height: cameraPreview.frame.height / 3)
         maskLayer.backgroundColor = UIColor.black.cgColor
         cameraPreview.mask = maskLayer
         
-        print(" cameraPreview.frame ",  cameraPreview.frame )
         if (avSession.canAddInput(input)){
             avSession.addInput(input)
             avSession.startRunning()
@@ -112,7 +118,12 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         let resiezed = (photoImage).scaleImage(toWidth: UIScreen.main.bounds.size.width)
         
         
-        let cropped = cropImage(imageToCrop: resiezed, toRect: CGRect(x: 0,y: 0,width: 375 * resiezed.scale, height: 200 * resiezed.scale))
+        let cropped = cropImage(imageToCrop: resiezed, toRect: CGRect(
+                                      x: 0,
+                                      y: 0,
+                                      width: cameraPreview!.frame.width * resiezed.scale,
+                                      height: cameraPreview!.frame.height / 3 * resiezed.scale
+        ))
         
         photoCaptureCompletionBlock(cropped)
     }
