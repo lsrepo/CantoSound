@@ -14,7 +14,8 @@ struct MyTextFieldStyle: TextFieldStyle {
             .background(
                 RoundedRectangle(cornerRadius: 3, style: .continuous)
                     .stroke(Color.primary, lineWidth: 1.5)
-            ).padding()
+            )
+        .padding()
     }
 }
 
@@ -50,6 +51,7 @@ struct ContentView: View {
             .keyboardType(.default)
             .font(.title3)
             .lineLimit(1)
+            
     }
     
     var cameraButton: some View {
@@ -58,17 +60,20 @@ struct ContentView: View {
                 showCameraView.toggle()
             },
             label : {
-                Image(systemName: "camera.circle").resizable().foregroundColor(Color.primary)
+                Image(systemName: "camera.viewfinder").resizable().foregroundColor(Color.orange)
             }
         )
     }
 
+
     var body: some View {
+        
         VStack {
             Spacer(minLength: 50)
+            Text("請輸入或影低想查嘅字").font(.subheadline)
             HStack{
-                wordInputField.frame(width: 200, height: 150.0).padding()
-                cameraButton.frame( width:40, height: 40).padding()
+                wordInputField.frame(width: 200, height: 150.0)
+                cameraButton.frame( width:50, height: 50)
             }
             ZStack(alignment: .top){
                 ProgressView()

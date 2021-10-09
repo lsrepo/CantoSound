@@ -19,7 +19,6 @@ struct ScanView: View {
     var onCommitKeywordInputField: () -> Void
     
     func handleText(sentences: [String]) {
-        print(sentences)
         detectedSentences = sentences
     }
     
@@ -44,7 +43,7 @@ struct ScanView: View {
                 label : {Image(systemName: "camera.viewfinder")
                     .resizable()
                     .frame( width:40, height: 40)
-                    .foregroundColor(Color.primary)
+                    .foregroundColor(Color.orange)
                 }).padding()
             
             WordCandidateListView(words: $detectedSentences, selectedWord: $keyword, shouldViewPresented: $showCameraView, onWordSelected: onCommitKeywordInputField)

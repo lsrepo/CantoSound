@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27512C2F27118D9600DD7C91 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27512C2E27118D9600DD7C91 /* UIScreenExtension.swift */; };
+		27512C322711962200DD7C91 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27512C312711962200DD7C91 /* UIImageExtension.swift */; };
 		EA0ACDC9251E18D7003A91CD /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACDC8251E18D7003A91CD /* ScanView.swift */; };
 		EA0B3C8B2517304E00E748E0 /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */; };
 		EA0B3C90251744A900E748E0 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B3C8F251744A900E748E0 /* TestError.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		27512C2E27118D9600DD7C91 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
+		27512C312711962200DD7C91 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		EA0ACDC8251E18D7003A91CD /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		EA0B3C8A2517304E00E748E0 /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
 		EA0B3C8F251744A900E748E0 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
@@ -104,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27512C302711960F00DD7C91 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27512C2E27118D9600DD7C91 /* UIScreenExtension.swift */,
+				27512C312711962200DD7C91 /* UIImageExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		EA2F9E5F251E294E0011E175 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +150,7 @@
 		EAAC37662517286200876B26 /* CantoSound */ = {
 			isa = PBXGroup;
 			children = (
+				27512C302711960F00DD7C91 /* extensions */,
 				EA2F9E5F251E294E0011E175 /* views */,
 				EAAC379525172B7D00876B26 /* processors */,
 				EAAC37672517286200876B26 /* CantoSoundApp.swift */,
@@ -146,7 +158,6 @@
 				EAAC37702517286300876B26 /* Info.plist */,
 				EAAC376D2517286300876B26 /* Preview Content */,
 				EA954729251E4A1E005B2A59 /* Sound.swift */,
-				27512C2E27118D9600DD7C91 /* UIScreenExtension.swift */,
 			);
 			path = CantoSound;
 			sourceTree = "<group>";
@@ -350,6 +361,7 @@
 				EA0ACDC9251E18D7003A91CD /* ScanView.swift in Sources */,
 				EA0B3CA9251839E000E748E0 /* WordCandidateListView.swift in Sources */,
 				EA6455DA2518E20300B6965A /* HtmlToWordDefinitionProcessor.swift in Sources */,
+				27512C322711962200DD7C91 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

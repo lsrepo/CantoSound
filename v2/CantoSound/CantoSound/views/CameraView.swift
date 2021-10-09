@@ -35,9 +35,12 @@ class CameraViewController : UIViewController {
     var photoOutput: AVCapturePhotoOutput?
     var cameraPreview: AVCaptureVideoPreviewLayer?
     lazy var avSession = AVCaptureSession()
-    lazy var session = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back)
+    lazy var session = AVCaptureDevice.DiscoverySession(
+        deviceTypes: [.builtInWideAngleCamera],
+        mediaType: .video,
+        position: .back
+    )
     lazy var camera = session.devices.first
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,12 +97,7 @@ class CameraViewController : UIViewController {
         photoOutput?.capturePhoto(with: capturePhotoSettings, delegate: self)
         
     }
-    // TODO: move to extension
-    func cropImage(imageToCrop:UIImage, toRect rect:CGRect) -> UIImage{
-        let imageRef:CGImage = imageToCrop.cgImage!.cropping(to: rect)!
-        let cropped:UIImage = UIImage(cgImage:imageRef)
-        return cropped
-    }
+
 }
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
@@ -118,11 +116,11 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         let resiezed = (photoImage).scaleImage(toWidth: UIScreen.main.bounds.size.width)
         
         
-        let cropped = cropImage(imageToCrop: resiezed, toRect: CGRect(
-                                      x: 0,
-                                      y: 0,
-                                      width: cameraPreview!.frame.width * resiezed.scale,
-                                      height: cameraPreview!.frame.height / 3 * resiezed.scale
+        let cropped = resiezed.cropImage(toRect: CGRect(
+          x: 0,
+          y: 0,
+          width: cameraPreview!.frame.width * resiezed.scale,
+          height: cameraPreview!.frame.height / 3 * resiezed.scale
         ))
         
         photoCaptureCompletionBlock(cropped)
@@ -139,49 +137,3 @@ enum CameraControllerError: Swift.Error {
 }
 
 
-
-
-extension UIImage {
-    func scalePreservingAspectRatio(targetSize: CGSize) -> UIImage {
-        // Determine the scale factor that preserves aspect ratio
-        let widthRatio = targetSize.width / size.width
-        let heightRatio = targetSize.height / size.height
-        
-        let scaleFactor = min(widthRatio, heightRatio)
-        
-        // Compute the new image size that preserves aspect ratio
-        let scaledImageSize = CGSize(
-            width: size.width * scaleFactor,
-            height: size.height * scaleFactor
-        )
-        
-        // Draw and return the resized UIImage
-        let renderer = UIGraphicsImageRenderer(
-            size: scaledImageSize
-        )
-        
-        let scaledImage = renderer.image { _ in
-            self.draw(in: CGRect(
-                origin: .zero,
-                size: scaledImageSize
-            ))
-        }
-        
-        return scaledImage
-    }
-}
-
-extension UIImage {
-    func scaleImage(toWidth newWidth: CGFloat) -> UIImage {
-        let scale = newWidth / self.size.width
-        let newHeight = self.size.height * scale
-        let newSize = CGSize(width: newWidth, height: newHeight)
-        
-        let renderer = UIGraphicsImageRenderer(size: newSize)
-        
-        let image = renderer.image { (context) in
-            self.draw(in: CGRect(origin: CGPoint(x: 0, y: 0), size: newSize))
-        }
-        return image
-    }
-}

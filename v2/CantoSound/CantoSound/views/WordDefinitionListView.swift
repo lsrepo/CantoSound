@@ -17,7 +17,7 @@ struct WordDefinitionListView: View {
                 definition in WordDefinitionRow(
                     definition: WordDefinitionRowData(
                         homophone: definition.homophones.first ?? "",
-                        syllabel: definition.syllableYale ?? "",
+                        syllabel: definition.syllableYale ,
                         longText: definition.words
                             .joined(separator: ", ")
                             .appending(definition.words.isEmpty ? "" : " ")
