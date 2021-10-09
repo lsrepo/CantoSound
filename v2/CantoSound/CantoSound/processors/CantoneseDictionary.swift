@@ -13,7 +13,7 @@ class CantoneseDictionary {
             return nil
         }
         
-        guard let lookUpUrl = URL(string: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=\(character)") else {
+        guard let lookUpUrl = URL(string: "http://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=\(character)") else {
             return nil
         }
 

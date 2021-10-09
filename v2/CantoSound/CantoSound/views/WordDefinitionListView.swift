@@ -22,7 +22,7 @@ struct WordDefinitionListView: View {
                             .joined(separator: ", ")
                             .appending(definition.words.isEmpty ? "" : " ")
                             .appending(definition.note ?? ""),
-                        audioLink: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/sound/\(definition.syllableYale).Mp3"
+                        audioLink: "http://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/sound/\(definition.syllableYale).Mp3"
                     )
                 )
             }
@@ -45,11 +45,13 @@ struct WordDefinitionListView_Previews: PreviewProvider {
         note: "異讀字"
     )]
     @Binding var definitions: [ChineseWordefinition]
-    
+
+
     static var previews: some View {
-        WordDefinitionListView(definitions: .constant(example))
-            .preferredColorScheme(.dark)
-    }
+       ForEach(ColorScheme.allCases, id: \.self, content: WordDefinitionListView(
+                definitions: .constant(example)).preferredColorScheme
+       )
+   }
 }
 
 struct WordDefinitionRow: View, Identifiable {

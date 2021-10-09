@@ -22,6 +22,7 @@ class HtmlToWordDefinitionProcessorTest: XCTestCase {
     
     func testSoup() throws {
         do{
+            let oiHtml = try getHtmlFile(name: "oi")
             let doc: Document = try SwiftSoup.parse(oiHtml)
             let table = try doc.select("#char_can_table > tbody")
             let headerRow = try table.select("tr:nth-child(1)")
